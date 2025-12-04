@@ -1,0 +1,67 @@
+.DS_Store
+node_modules
+/dist
+package-lock.json
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Angular build output
+dist/
+dist-ssr/
+build/
+.angular/
+# Vue CLI
+dist/
+
+# Vue (Vite)
+dist/
+node_modules/.vite/
+
+# React (CRA)
+build/
+
+
+# React (Vite)
+dist/
+node_modules/.vite/
+
+# React (Next.js)
+.next/
+out/
+
+# Node dependencies
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Env files
+.env
+.env.*.local
+
+# Editor artifacts
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
