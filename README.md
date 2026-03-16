@@ -6,7 +6,7 @@
 | 2 | [CRUD React](https://github.com/zeropointcoder/webverse/tree/main/crud-react) | React |
 | 3 | [CRUD Vue](https://github.com/zeropointcoder/webverse/tree/main/crud-vue) | Vue 3 |
 | 4 | [Employee Management System](https://github.com/zeropointcoder/webverse/tree/main/employee-management-system) | Angular 21 |
-| 5 | [Employees Access Portal](https://github.com/zeropointcoder/webverse/tree/main/employees-access-portal) | Angular 21 |
+| 5 | [Employee Access Portal](https://github.com/zeropointcoder/webverse/tree/main/employee-access-portal) | Angular 21 |
 | 6 | [OfficeMart](https://github.com/zeropointcoder/webverse/tree/main/officemart) | Angular 21 |
 | 7 | [Student Management System](https://github.com/zeropointcoder/webverse/tree/main/student-management-system) | React |
 | 8 | [Student Registration System](https://github.com/zeropointcoder/webverse/tree/main/student-registration-system) | React |
