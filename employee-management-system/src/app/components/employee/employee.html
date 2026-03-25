@@ -14,13 +14,14 @@
         <tbody>
             @for(employee of employees; let i = $index; track $index) {
             <tr>
-                <th scope="row">{{$index+1}}</th>
+                <th scope="row">{{i+1}}</th>
                 <td>
-                    <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#employeeFormModal">&#9999;</button>
+                    <button (click)="onUpdateCta(employee)" type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#employeeFormModal">&#9999;</button>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">&#128465;</button>
+                    <button (click)="onDelete(employee.id)" type="button" class="btn btn-sm btn-outline-secondary">&#128465;</button>
                 </td>
+                <td>{{employee.id}}</td>
                 <td>{{employee.fullname}}</td>
                 <td>{{employee.phone}}</td>
                 <td>{{employee.email}}</td>

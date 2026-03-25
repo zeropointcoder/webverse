@@ -1,11 +1,1 @@
-{
-    employees: [],
-    comments: [
-        { id: 1, text: 'a comment about post 1', postId: 1 },
-        { id: 2, text: 'another comment about post 1', postId: 1 }
-    ],
-    profile: {
-        name: 'typicode'
-    }
-}
-  
+{employees:[{fullname:'Reb Wilkerson',phone:'+1 (404) 631-1579',email:'fyduqofelo@mailinator.com',id:'dead'},{id:'5908',fullname:'Alfreda Pope',phone:'+1 (628) 121-1134',email:'cytymosuto@mailinator.com'}],comments:[{id:'1',text:'a comment about post 1',postId:1},{id:'2',text:'another comment about post 1',postId:1}],profile:{name:'typicode'}}

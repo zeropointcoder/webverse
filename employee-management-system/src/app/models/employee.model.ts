@@ -1,9 +1,8 @@
 export class Employee {
+    id: String = ''
     fullname: String = ''
     phone: String = ''
     email: String = ''
-    
-    empid: String = ''
 
     constructor() {}
 }

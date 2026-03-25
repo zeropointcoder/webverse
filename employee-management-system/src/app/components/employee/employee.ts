@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
 import { EmployeeService } from '../../services/employee'
 import { Employee } from '../../models/employee.model'
 import { HttpErrorResponse } from '@angular/common/http'
+import { retry } from 'rxjs'
 
 @Component({
   selector: 'app-employee',
@@ -16,56 +17,119 @@ export class EmployeeComponent implements OnInit {
 
   empForm!: FormGroup
 
-  employees: any = []
+  employees: Employee[] = []
   employeeNew: Employee = new Employee
   employeeEdit: Employee = new Employee
   
   empid: String = ''
 
-  constructor() {
+  constructor() {}
+
+  ngOnInit(): void {
     this.empForm = this.fb.group({
       fullname: [''],
       phone: [''],
       email: ['']
     })
-  }
 
-  ngOnInit(): void {
     this.onLoad()
   }
 
   onLoad(): void {
-    this.es.onLoad().subscribe({
-      next: (res: any) => {
-        this.employees = res.users
+    this.es.onLoad().pipe(retry(2)).subscribe({
+      next: (res: Employee[]) => {
+        this.employees = res || []
       },
-      error: (err: HttpErrorResponse) => console.error(err?.message),
+      error: (err: HttpErrorResponse) => console.error('LOAD ERROR => ', err),
       complete: () => {}
     })
   }
 
   onAdd(): void {
+    if(this.empForm.value.fullname == '' || this.empForm.value.phone == '' || this.empForm.value.email == '') {
+      return
+    }
 
+    const empObj = {
+      fullname: this.empForm.value.fullname,
+      phone: this.empForm.value.phone,
+      email: this.empForm.value.email
+    }
+
+    this.es.onAdd(empObj).subscribe({
+      next: (res: Employee) => {
+        this.employeeNew = res
+        this.employeeEdit = new Employee
+        
+        this.onResetForm()
+        this.onCloseModal()
+        this.onLoad()
+      },
+      error: (err: HttpErrorResponse) => console.error('LOAD ERROR => ', err),
+      complete: () => {}
+    })
   }
 
   onUpdate(): void {
+    if(this.empForm.value.fullname == '' || this.empForm.value.phone == '' || this.empForm.value.email == '') {
+      return
+    }
 
+    const empObj = {
+      fullname: this.empForm.value.fullname,
+      phone: this.empForm.value.phone,
+      email: this.empForm.value.email
+    }
+
+    this.es.onUpdate(empObj, this.empid).subscribe({
+      next: (res: Employee) => {
+        this.employeeEdit = res
+        this.employeeNew = new Employee
+
+        this.onResetForm()
+        this.onCloseModal()
+        this.onLoad()
+      },
+      error: (err: HttpErrorResponse) => console.error('LOAD ERROR => ', err),
+      complete: () => {}
+    })
   }
 
-  onDelete(): void {
+  onDelete(empid: String): void {
+    this.es.onDelete(empid).subscribe({
+      next: (res: Employee) => {
+        this.employeeNew = res
+        this.employeeEdit = res
 
+        this.onResetForm()
+        this.onLoad()
+      },
+      error: (err: HttpErrorResponse) => console.error('LOAD ERROR => ', err),
+      complete: () => {}
+    })
   }
 
-  onUpdateCta(): void {
+  onUpdateCta(employee: Employee): void {
+    this.empForm.controls['fullname'].setValue(employee.fullname)
+    this.empForm.controls['phone'].setValue(employee.phone)
+    this.empForm.controls['email'].setValue(employee.email)
 
+    this.empid = employee.id
   }
 
-  onReset(): void {
+  onResetForm(): void {
+    // this.empForm.reset()
 
+    this.empForm.controls['fullname'].setValue('')
+    this.empForm.controls['phone'].setValue('')
+    this.empForm.controls['email'].setValue('')
+
+    this.empid = ''
   }
   
   onCloseModal(): void {
-
+    const btnclose = document.getElementById('btn-close')
+    btnclose?.click()
   }
   
 }
