@@ -1,1 +1,67 @@
-<p>employee works!</p>
+<div class="table-responsive">
+    <table class="table table-danger">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">update</th>
+                <th scope="col">delete</th>
+                <th scope="col">id</th>
+                <th scope="col">fullname</th>
+                <th scope="col">phone</th>
+                <th scope="col">email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(employee of employees; let i = $index; track $index) {
+            <tr>
+                <th scope="row">{{$index+1}}</th>
+                <td>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#employeeFormModal">&#9999;</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">&#128465;</button>
+                </td>
+                <td>{{employee.fullname}}</td>
+                <td>{{employee.phone}}</td>
+                <td>{{employee.email}}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="modal fade" id="employeeFormModal" tabindex="-1" aria-labelledby="employeeFormModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 text-uppercase text-dark" id="employeeFormModalLabel">Employee form</h1>
+                    <button type="button" id="btn-close" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="empForm">
+                        <div class="mb-3">
+                            <label for="fullname" class="form-label">fullname</label>
+                            <input formControlName="fullname" type="text" class="form-control" id="fullname" aria-describedby="fullnameHelp" name="fullname" />
+                            <div id="fullnameHelp" class="form-text">We'll never share your personal details with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">phone</label>
+                            <input formControlName="phone" type="text" class="form-control" id="phone" aria-describedby="phoneHelp" name="phone" />
+                            <div id="phoneHelp" class="form-text">We'll never share your personal details with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">email</label>
+                            <input formControlName="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" />
+                            <div id="emailHelp" class="form-text">We'll never share your personal details with anyone else.</div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">cancel</button>
+                    <button (click)="onUpdate()" type="button" class="btn btn-info btn-sm">update</button>
+                    <button (click)="onAdd()" type="button" class="btn btn-danger btn-sm">add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
