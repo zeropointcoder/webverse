@@ -1,25 +1,35 @@
 import { Component, inject, OnInit } from '@angular/core'
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { AsyncPipe } from '@angular/common'
+import { HttpErrorResponse } from '@angular/common/http'
+import { Observable, retry } from 'rxjs'
+import { Store } from '@ngrx/store'
 import { EmployeeService } from '../../services/employee'
 import { Employee } from '../../models/employee.model'
-import { HttpErrorResponse } from '@angular/common/http'
-import { retry } from 'rxjs'
+import { onAddSuccess, onDeleteSuccess, onLoadSuccess, onUpdateSuccess } from '../../store/employee/employee.action'
+import { selectEmployeeEdit, selectEmployeeNew, selectEmployees } from '../../store/employee/employee.select'
 
 @Component({
   selector: 'app-employee',
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule, AsyncPipe],
   templateUrl: './employee.html',
   styleUrl: './employee.css',
 })
 export class EmployeeComponent implements OnInit {
+  store: Store = inject(Store)
   es: EmployeeService = inject(EmployeeService)
   fb: FormBuilder = inject(FormBuilder)
 
   empForm!: FormGroup
 
-  employees: Employee[] = []
-  employeeNew: Employee = new Employee
-  employeeEdit: Employee = new Employee
+  // employees: Employee[] = []
+  employees$: Observable<Employee[]> = this.store.select(selectEmployees)
+
+  // employeeNew: Employee = new Employee
+  employeeNew$: Observable<Employee> = this.store.select(selectEmployeeNew)
+
+  // employeeEdit: Employee = new Employee
+  employeeEdit$: Observable<Employee> = this.store.select(selectEmployeeEdit)
   
   empid: String = ''
 
@@ -38,7 +48,8 @@ export class EmployeeComponent implements OnInit {
   onLoad(): void {
     this.es.onLoad().pipe(retry(2)).subscribe({
       next: (res: Employee[]) => {
-        this.employees = res || []
+        // this.employees = res || []
+        this.store.dispatch(onLoadSuccess({employees: res}))
       },
       error: (err: HttpErrorResponse) => console.error('LOAD ERROR => ', err),
       complete: () => {}
@@ -58,8 +69,9 @@ export class EmployeeComponent implements OnInit {
 
     this.es.onAdd(empObj).subscribe({
       next: (res: Employee) => {
-        this.employeeNew = res
-        this.employeeEdit = new Employee
+        // this.employeeNew = res
+        // this.employeeEdit = new Employee
+        this.store.dispatch(onAddSuccess({employeeNew: res}))
         
         this.onResetForm()
         this.onCloseModal()
@@ -83,8 +95,9 @@ export class EmployeeComponent implements OnInit {
 
     this.es.onUpdate(empObj, this.empid).subscribe({
       next: (res: Employee) => {
-        this.employeeEdit = res
-        this.employeeNew = new Employee
+        // this.employeeEdit = res
+        // this.employeeNew = new Employee
+        this.store.dispatch(onUpdateSuccess({employeeEdit: res}))
 
         this.onResetForm()
         this.onCloseModal()
@@ -98,8 +111,9 @@ export class EmployeeComponent implements OnInit {
   onDelete(empid: String): void {
     this.es.onDelete(empid).subscribe({
       next: (res: Employee) => {
-        this.employeeNew = res
-        this.employeeEdit = res
+        // this.employeeNew = res
+        // this.employeeEdit = res
+        this.store.dispatch(onDeleteSuccess({employee: res}))
 
         this.onResetForm()
         this.onLoad()
