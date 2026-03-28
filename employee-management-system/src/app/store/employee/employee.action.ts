@@ -26,7 +26,7 @@ export const onUpdate = createAction(
 )
 
 export const onUpdateSuccess = createAction(
-    '[EMPLOYEE] ON DELETE SUCCESS',
+    '[EMPLOYEE] ON UPDATE SUCCESS',
     props<{employeeEdit: Employee}>()
 )
 
