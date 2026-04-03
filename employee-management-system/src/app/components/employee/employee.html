@@ -59,9 +59,9 @@
                                 <label for="profileimage" class="form-label">profileimage</label>
                             </div>
                             <div class="col">
-                                <input type="file" (change)="onFileChange($event)" accept="image/*" />
+                                <input class="form-control" type="file" (change)="onFileChange($event)" accept="image/*" />
                                 @if(empForm.get('profileimage')?.value) {
-                                    <img [src]="empForm.value.profileimage" width="90" height="90" style="border-radius: 50%; object-fit: cover;" />
+                                    <img [src]="empForm.value.profileimage" width="90" height="90" class="mt-2" style="border-radius: 50%; object-fit: cover;" />
                                     <p>Image selected ✔</p>
                                 }
                             </div>
