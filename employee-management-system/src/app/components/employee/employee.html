@@ -6,9 +6,15 @@
                 <th scope="col">update</th>
                 <th scope="col">delete</th>
                 <th scope="col">id</th>
+                <th scope="col">img</th>
                 <th scope="col">fullname</th>
                 <th scope="col">phone</th>
                 <th scope="col">email</th>
+                <th scope="col">title</th>
+                <th scope="col">dept</th>
+                <th scope="col">DOJ</th>
+                <th scope="col">type</th>
+                <th scope="col">address</th>
             </tr>
         </thead>
         <tbody>
@@ -22,9 +28,17 @@
                     <button (click)="onDelete(employee.id)" type="button" class="btn btn-sm btn-outline-secondary">&#128465;</button>
                 </td>
                 <td>{{employee.id}}</td>
+                <td>
+                    <img [src]="employee.profileimage || 'https://placehold.co/40'" width="40" height="40" style="border-radius: 50%; object-fit: cover;" />
+                </td>
                 <td>{{employee.fullname}}</td>
                 <td>{{employee.phone}}</td>
                 <td>{{employee.email}}</td>
+                <td>{{employee.jobtitle}}</td>
+                <td>{{employee.department}}</td>
+                <td>{{employee.dateofjoining}}</td>
+                <td>{{employee.employmenttype}}</td>
+                <td>{{employee.address}}</td>
             </tr>
             }
         </tbody>
@@ -39,20 +53,92 @@
                 </div>
                 <div class="modal-body">
                     <form [formGroup]="empForm">
-                        <div class="mb-3">
-                            <label for="fullname" class="form-label">fullname</label>
-                            <input formControlName="fullname" type="text" class="form-control" id="fullname" aria-describedby="fullnameHelp" name="fullname" />
-                            <div id="fullnameHelp" class="form-text">We'll never share your personal details with anyone else.</div>
+                        <div class="row g-3 align-items-center mb-3">
+                            <div id="confidentialHelp" class="form-text">We'll never share your personal details with anyone else.</div>
+                            <div class="col">
+                                <label for="profileimage" class="form-label">profileimage</label>
+                            </div>
+                            <div class="col">
+                                <input type="file" (change)="onFileChange($event)" accept="image/*" />
+                                @if(empForm.get('profileimage')?.value) {
+                                    <img [src]="empForm.value.profileimage" width="90" height="90" style="border-radius: 50%; object-fit: cover;" />
+                                    <p>Image selected ✔</p>
+                                }
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="phone" class="form-label">phone</label>
-                            <input formControlName="phone" type="text" class="form-control" id="phone" aria-describedby="phoneHelp" name="phone" />
-                            <div id="phoneHelp" class="form-text">We'll never share your personal details with anyone else.</div>
+                        <div class="row g-3 align-items-center mb-3">
+                            <div class="col">
+                                <label for="fullname" class="form-label">fullname<sup>*</sup></label>
+                            </div>
+                            <div class="col">
+                                <input formControlName="fullname" type="text" class="form-control" id="fullname" aria-describedby="confidentialHelp" name="fullname" />
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">email</label>
-                            <input formControlName="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" />
-                            <div id="emailHelp" class="form-text">We'll never share your personal details with anyone else.</div>
+                        <div class="row g-3 align-items-center mb-3">
+                            <div class="col">
+                                <label for="phone" class="form-label">phone<sup>*</sup></label>
+                            </div>
+                            <div class="col">
+                                <input formControlName="phone" type="text" class="form-control" id="phone" aria-describedby="confidentialHelp" name="phone" />
+                            </div>
+                        </div>
+                        <div class="row g-3 align-items-center mb-3">
+                            <div class="col">
+                                <label for="email" class="form-label">email<sup>*</sup></label>
+                            </div>
+                            <div class="col">
+                                <input formControlName="email" type="email" class="form-control" id="email" name="email" aria-describedby="confidentialHelp" />
+                            </div>
+                        </div>
+                        <div class="row g-3 align-items-center mb-3">
+                            <div class="col">
+                                <label for="jobtitle" class="form-label">jobtitle</label>
+                            </div>
+                            <div class="col">
+                                <input formControlName="jobtitle" type="text" class="form-control" id="jobtitle" aria-describedby="confidentialHelp" name="jobtitle" />
+                            </div>
+                        </div>
+                        <div class="row g-3 align-items-center mb-3">
+                            <div class="col">
+                                <label for="department" class="form-label">department</label>
+                            </div>
+                            <div class="col">
+                                <select formControlName="department" class="form-select" aria-label="Department select">
+                                    <option value="" selected>Select department</option>
+                                    @for(d of departments; track $index) {
+                                        <option [value]="d">{{d}}</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row g-3 align-items-center mb-3">
+                            <div class="col">
+                                <label for="dateofjoining" class="form-label">dateofjoining</label>
+                            </div>
+                            <div class="col">
+                                <input formControlName="dateofjoining" type="text" class="form-control" id="dateofjoining" aria-describedby="confidentialHelp" name="dateofjoining" />
+                            </div>
+                        </div>
+                        <div class="row g-3 align-items-center mb-3">
+                            <div class="col">
+                                <label for="employmenttype" class="form-label">employmenttype</label>
+                            </div>
+                            <div class="col">
+                                <select formControlName="employmenttype" class="form-select" aria-label="Employment type select">
+                                    <option value="" selected>Select employment type</option>
+                                    @for(t of employmenttypes; track $index) {
+                                        <option [value]="t">{{t}}</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row g-3 align-items-center mb-3">
+                            <div class="col">
+                                <label for="address" class="form-label">address</label>
+                            </div>
+                            <div class="col">
+                                <textarea formControlName="address" type="text" class="form-control" id="address" aria-describedby="confidentialHelp" name="address"></textarea>
+                            </div>
                         </div>
                     </form>
                 </div>
