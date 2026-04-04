@@ -22,16 +22,23 @@ export const employeeReducer = createReducer(
     })),
     on(onAddSuccess, (state, {employeeNew}) => ({
         ...state,
+        employees: [...state.employees, employeeNew],
         employeeNew: employeeNew,
         employeeEdit: new Employee
     })),
     on(onUpdateSuccess, (state, {employeeEdit}) => ({
         ...state,
+        employees: state.employees.map(emp => 
+            emp.id === employeeEdit.id ? employeeEdit : emp
+        ),
         employeeEdit: employeeEdit,
         employeeNew: new Employee
     })),
     on(onDeleteSuccess, (state, {employee}) => ({
         ...state,
+        employees: state.employees.filter(emp => 
+            emp.id !== employee.id
+        ),
         employeeNew: employee,
         employeeEdit: employee
     })),

@@ -111,7 +111,7 @@ export class EmployeeComponent implements OnInit {
     this.store.dispatch(onAdd({empObj}))
     this.onResetForm()
     this.onCloseModal()
-    this.store.dispatch(onLoad())
+    // this.store.dispatch(onLoad())
   }
 
   onUpdate(): void {
@@ -155,7 +155,7 @@ export class EmployeeComponent implements OnInit {
     this.store.dispatch(onUpdate({empObj, empid: this.empid}))
     this.onResetForm()
     this.onCloseModal()
-    this.store.dispatch(onLoad())
+    // this.store.dispatch(onLoad())
   }
 
   onDelete(empid: String): void {
@@ -174,7 +174,7 @@ export class EmployeeComponent implements OnInit {
     this.store.dispatch(onDelete({empid}))
     this.onResetForm()
     this.onCloseModal()
-    this.store.dispatch(onLoad())
+    // this.store.dispatch(onLoad())
   }
 
   createEmpObj(employeeForm: any): any {
@@ -216,7 +216,7 @@ export class EmployeeComponent implements OnInit {
       this.empForm.patchValue({
         profileimage: reader.result as string
       })
-      this.cd.detectChanges(); // 🔥 stabilise
+      this.cd.detectChanges(); // stabilise
     }
 
     reader.readAsDataURL(file)
