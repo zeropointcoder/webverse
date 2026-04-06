@@ -1,3 +1,25 @@
+# StudentManagementSystem
+
+## 1. Install dependencies
+
+npm install
+
+## 2. Start mock backend in a separate terminal (needs json-server installed)
+
+json-server --watch db.json5 -p 5400
+
+## 3. Start frontend
+
+npm start
+
+---
+
+## Notes
+
+* Backend uses json-server (mock REST API)
+* Data persists locally in db.json
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
