@@ -1,0 +1,200 @@
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+
+function Employee() {
+  const baseUrl = `http://localhost:5400`
+  const [students, setStudents] = useState([])
+  const [studentNew, setStudentNew] = useState({})
+  const [studentEdit, setStudentEdit] = useState({})
+
+  const [studentId, setStudentId] = useState('')
+  const [fullname, setFullname] = useState('')
+  const [phone, setPhone] = useState('')
+  const [email, setEmail] = useState('')
+
+  useEffect(() => {
+    onLoad()
+  }, [])
+
+  const onLoad = async () => {
+    try {
+      const {data} = await axios.get(`${baseUrl}/students`)
+      setStudents(data)
+    } catch (err) {
+      console.error(err)
+    }
+    
+  }
+
+  const onAdd = async () => {
+    if(fullname === '' || phone === '' || email === '') {
+      return
+    }
+
+    const studentObj = {
+      fullname: fullname,
+      phone: phone,
+      email: email
+    }
+
+    try {
+      const {data} = await axios.post(`${baseUrl}/students`, studentObj)
+      setStudentNew(data)
+      setStudentEdit({})
+      setStudents([...students, studentNew])
+
+      onResetForm()
+      onCloseModal()
+      onLoad()
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  const onUpdate = async () => {
+    if(fullname === '' || phone === '' || email === '') {
+      return
+    }
+
+    const studentObj = {
+      fullname: fullname,
+      phone: phone,
+      email: email
+    }
+
+    try {
+      const {data} = await axios.put(`${baseUrl}/students/${studentId}`, studentObj)
+      setStudentEdit(data)
+      setStudentNew({})
+      setStudents(students.map(student => student.id === studentId ? studentEdit : student))
+
+      onResetForm()
+      onCloseModal()
+      onLoad()
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  const onDelete = async (studentId) => {
+    try {
+      const {data} = await axios.delete(`${baseUrl}/students/${studentId}`)
+      setStudentNew(data)
+      setStudentEdit(data)
+      setStudents([students.filter(student => student.id !== studentId)])
+
+      onResetForm()
+      onLoad()
+    } catch (err) {
+      console.error(err)
+    }
+  }
+  
+  const onUpdateCta = (student) => {
+    setFullname(student.fullname)
+    setPhone(student.phone)
+    setEmail(student.email)
+
+    setStudentId(student.id)
+  }
+
+  const onResetForm = () => {
+    setFullname('')
+    setPhone('')
+    setEmail('')
+
+    setStudentId('')
+  }
+
+  const onCloseModal = () => {
+    const btnclose = document.getElementById('btn-close')
+    btnclose?.click()
+  }
+
+  return (
+    
+  <div className="table-responsive">
+    <table className="table table-info">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">update</th>
+          <th scope="col">delete</th>
+          <th scope="col">id</th>
+          <th scope="col">fullname</th>
+          <th scope="col">phone</th>
+          <th scope="col">email</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          students.length > 0 ? students.map((student, index) => (
+            <tr row={index}>
+              <th scope="row">{index+1}</th>
+              <td>
+                <button type='button' className='btn btn-sm btn-info-outline' onClick={() => onUpdateCta(student)} data-bs-toggle="modal" data-bs-target="#studentFormModal">✏️</button>
+              </td>
+              <td>
+                <button type='button' className='btn btn-sm btn-secondary-outline' onClick={() => onDelete(student.id)}>🗑️</button>
+              </td>
+              <td>{student.id}</td>
+              <td>{student.fullname}</td>
+              <td>{student.phone}</td>
+              <td>{student.email}</td>
+            </tr>
+          )) : null
+        }
+        
+      </tbody>
+    </table>
+
+    <div className="modal fade" id="studentFormModal" tabIndex="-1" aria-labelledby="studentFormModalLabel" aria-hidden="true">
+      <div className="modal-dialog">
+        <div className="modal-content">
+          <div className="modal-header">
+            <h1 className="modal-title fs-5 text-uppercase text-dark" id="studentFormModalLabel">Student form</h1>
+            <button type="button" id="btn-close" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div className="modal-body">
+            <form>
+              <div className="row g-3 align-items-center mb-3">
+                <div id="detailsHelp" className="form-text">We'll never share your personal details with anyone else.</div>
+                <div className='col'>
+                  <label htmlFor="fullname" className="form-label">fullname</label>
+                </div>
+                <div className='col'>
+                  <input value={fullname} onChange={(e) => setFullname(e.target.value)} type="text" className="form-control" id="fullname" aria-describedby="detailsHelp" />
+                </div>
+              </div>
+              <div className="row g-3 align-items-center mb-3">
+                <div className='col'>
+                  <label htmlFor="phone" className="form-label">phone</label>
+                </div>
+                <div className='col'>
+                  <input value={phone} onChange={(e) => setPhone(e.target.value)} type="text" className="form-control" id="phone" aria-describedby="detailsHelp" />
+                </div>
+              </div>
+              <div className="row g-3 align-items-center mb-3">
+                <div className='col'>
+                  <label htmlFor="email" className="form-label">email</label>
+                </div>
+                <div className='col'>
+                  <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" className="form-control" id="email" aria-describedby="detailsHelp" />
+                </div>
+              </div>
+            </form>
+          </div>
+          <div className="modal-footer">
+            <button type="button" className="btn btn-secondary btn-sm" data-bs-dismiss="modal">cancel</button>
+            <button onClick={() => onUpdate()} type="button" className="btn btn-info btn-sm">update</button>
+            <button onClick={() => onAdd()} type="button" className="btn btn-danger btn-sm">add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  )
+}
+
+export default Employee

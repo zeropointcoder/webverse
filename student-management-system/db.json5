@@ -1,10 +1,1 @@
-{
-    students: [],
-    comments: [
-        { id: 1, text: 'a comment about post 1', postId: 1 },
-        { id: 2, text: 'another comment about post 1', postId: 1 }
-    ],
-    profile: {
-        name: 'typicode'
-    }
-}
+{students:[{fullname:'Ciara Cantrell',phone:'+1 (234) 647-9666',email:'makaref@mailinator.com',id:'ff30'},{id:'2fab',fullname:'Amity Callahan',phone:'+1 (518) 571-9569',email:'qasas@mailinator.com'},{id:'f5e5',fullname:'Jenette Donovan',phone:'+1 (949) 374-2484',email:'hynywu@mailinator.com'},{id:'dd02',fullname:'Joan Sweet',phone:'+1 (296) 232-3933',email:'vamiququ@mailinator.com'}],comments:[{id:'1',text:'a comment about post 1',postId:1},{id:'2',text:'another comment about post 1',postId:1}],profile:{name:'typicode'}}
