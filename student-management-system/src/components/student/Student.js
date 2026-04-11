@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
+import {onAddSuccess, onLoadSuccess, onUpdateSuccess, onDeleteSuccess} from '../../store/student/studentSlice'
 
-function Employee() {
+function Student() {
   const baseUrl = `http://localhost:5400`
-  const [students, setStudents] = useState([])
-  const [studentNew, setStudentNew] = useState({})
-  const [studentEdit, setStudentEdit] = useState({})
+  // const [students, setStudents] = useState([])
+  // const [studentNew, setStudentNew] = useState({})
+  // const [studentEdit, setStudentEdit] = useState({})
+
+  const {students, studentNew, studentEdit} = useSelector(state => state.student)
+  const dispatch = useDispatch()
 
   const [studentId, setStudentId] = useState('')
   const [fullname, setFullname] = useState('')
@@ -19,7 +24,8 @@ function Employee() {
   const onLoad = async () => {
     try {
       const {data} = await axios.get(`${baseUrl}/students`)
-      setStudents(data)
+      // setStudents(data)
+      dispatch(onLoadSuccess(data))
     } catch (err) {
       console.error(err)
     }
@@ -39,13 +45,14 @@ function Employee() {
 
     try {
       const {data} = await axios.post(`${baseUrl}/students`, studentObj)
-      setStudentNew(data)
-      setStudentEdit({})
-      setStudents([...students, studentNew])
+      // setStudentNew(data)
+      // setStudentEdit({})
+      // setStudents([...students, studentNew])
+      dispatch(onAddSuccess(data))
 
       onResetForm()
       onCloseModal()
-      onLoad()
+      // onLoad()
     } catch (err) {
       console.error(err)
     }
@@ -64,13 +71,14 @@ function Employee() {
 
     try {
       const {data} = await axios.put(`${baseUrl}/students/${studentId}`, studentObj)
-      setStudentEdit(data)
-      setStudentNew({})
-      setStudents(students.map(student => student.id === studentId ? studentEdit : student))
+      // setStudentEdit(data)
+      // setStudentNew({})
+      // setStudents(students.map(student => student.id === studentId ? studentEdit : student))
+      dispatch(onUpdateSuccess(data))
 
       onResetForm()
       onCloseModal()
-      onLoad()
+      // onLoad()
     } catch (err) {
       console.error(err)
     }
@@ -79,12 +87,13 @@ function Employee() {
   const onDelete = async (studentId) => {
     try {
       const {data} = await axios.delete(`${baseUrl}/students/${studentId}`)
-      setStudentNew(data)
-      setStudentEdit(data)
-      setStudents([students.filter(student => student.id !== studentId)])
+      // setStudentNew(data)
+      // setStudentEdit(data)
+      // setStudents([students.filter(student => student.id !== studentId)])
+      dispatch(onDeleteSuccess(data))
 
       onResetForm()
-      onLoad()
+      // onLoad()
     } catch (err) {
       console.error(err)
     }
@@ -129,7 +138,7 @@ function Employee() {
       <tbody>
         {
           students.length > 0 ? students.map((student, index) => (
-            <tr row={index}>
+            <tr row={student.id}>
               <th scope="row">{index+1}</th>
               <td>
                 <button type='button' className='btn btn-sm btn-info-outline' onClick={() => onUpdateCta(student)} data-bs-toggle="modal" data-bs-target="#studentFormModal">✏️</button>
@@ -197,4 +206,4 @@ function Employee() {
   )
 }
 
-export default Employee
+export default Student
