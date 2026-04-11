@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import axios from 'axios'
-import {onAddSuccess, onLoadSuccess, onUpdateSuccess, onDeleteSuccess} from '../../store/student/studentSlice'
+// import axios from 'axios'
+// import {onAddSuccess, onLoadSuccess, onUpdateSuccess, onDeleteSuccess, onLoadThunk, onAddThunk, onUpdateThunk, onDeleteThunk} from '../../store/student/studentSlice'
+import {onLoadThunk, onAddThunk, onUpdateThunk, onDeleteThunk} from '../../store/student/studentSlice'
 
 function Student() {
-  const baseUrl = `http://localhost:5400`
+  // const baseUrl = `http://localhost:5400`
   // const [students, setStudents] = useState([])
   // const [studentNew, setStudentNew] = useState({})
   // const [studentEdit, setStudentEdit] = useState({})
 
-  const {students, studentNew, studentEdit} = useSelector(state => state.student)
+  // const {students, studentNew, studentEdit} = useSelector(state => state.student)
+  const {students} = useSelector(state => state.student)
   const dispatch = useDispatch()
 
   const [studentId, setStudentId] = useState('')
@@ -18,19 +20,20 @@ function Student() {
   const [email, setEmail] = useState('')
 
   useEffect(() => {
-    onLoad()
+    // onLoad()
+    dispatch(onLoadThunk())
   }, [])
 
-  const onLoad = async () => {
-    try {
-      const {data} = await axios.get(`${baseUrl}/students`)
-      // setStudents(data)
-      dispatch(onLoadSuccess(data))
-    } catch (err) {
-      console.error(err)
-    }
+  // const onLoad = async () => {
+  //   try {
+  //     const {data} = await axios.get(`${baseUrl}/students`)
+  //     // setStudents(data)
+  //     dispatch(onLoadSuccess(data))
+  //   } catch (err) {
+  //     console.table([err])
+  //   }
     
-  }
+  // }
 
   const onAdd = async () => {
     if(fullname === '' || phone === '' || email === '') {
@@ -43,19 +46,23 @@ function Student() {
       email: email
     }
 
-    try {
-      const {data} = await axios.post(`${baseUrl}/students`, studentObj)
-      // setStudentNew(data)
-      // setStudentEdit({})
-      // setStudents([...students, studentNew])
-      dispatch(onAddSuccess(data))
+    // try {
+    //   const {data} = await axios.post(`${baseUrl}/students`, studentObj)
+    //   // setStudentNew(data)
+    //   // setStudentEdit({})
+    //   // setStudents([...students, studentNew])
+    //   dispatch(onAddSuccess(data))
 
-      onResetForm()
-      onCloseModal()
-      // onLoad()
-    } catch (err) {
-      console.error(err)
-    }
+    //   onResetForm()
+    //   onCloseModal()
+    //   // onLoad()
+    // } catch (err) {
+    //   console.table([err])
+    // }
+
+    dispatch(onAddThunk({studentObj}))
+    onResetForm()
+    onCloseModal()
   }
 
   const onUpdate = async () => {
@@ -69,34 +76,41 @@ function Student() {
       email: email
     }
 
-    try {
-      const {data} = await axios.put(`${baseUrl}/students/${studentId}`, studentObj)
-      // setStudentEdit(data)
-      // setStudentNew({})
-      // setStudents(students.map(student => student.id === studentId ? studentEdit : student))
-      dispatch(onUpdateSuccess(data))
+    // try {
+    //   const {data} = await axios.put(`${baseUrl}/students/${studentId}`, studentObj)
+    //   // setStudentEdit(data)
+    //   // setStudentNew({})
+    //   // setStudents(students.map(student => student.id === studentId ? studentEdit : student))
+    //   dispatch(onUpdateSuccess(data))
 
-      onResetForm()
-      onCloseModal()
-      // onLoad()
-    } catch (err) {
-      console.error(err)
-    }
+    //   onResetForm()
+    //   onCloseModal()
+    //   // onLoad()
+    // } catch (err) {
+    //   console.table([err])
+    // }
+
+    dispatch(onUpdateThunk({studentObj, studentId}))
+    onResetForm()
+    onCloseModal()
   }
 
   const onDelete = async (studentId) => {
-    try {
-      const {data} = await axios.delete(`${baseUrl}/students/${studentId}`)
-      // setStudentNew(data)
-      // setStudentEdit(data)
-      // setStudents([students.filter(student => student.id !== studentId)])
-      dispatch(onDeleteSuccess(data))
+    // try {
+    //   const {data} = await axios.delete(`${baseUrl}/students/${studentId}`)
+    //   // setStudentNew(data)
+    //   // setStudentEdit(data)
+    //   // setStudents([students.filter(student => student.id !== studentId)])
+    //   dispatch(onDeleteSuccess(data))
 
-      onResetForm()
-      // onLoad()
-    } catch (err) {
-      console.error(err)
-    }
+    //   onResetForm()
+    //   // onLoad()
+    // } catch (err) {
+    //   console.table([err])
+    // }
+
+    dispatch(onDeleteThunk({studentId}))
+    onResetForm()
   }
   
   const onUpdateCta = (student) => {
@@ -138,7 +152,7 @@ function Student() {
       <tbody>
         {
           students.length > 0 ? students.map((student, index) => (
-            <tr row={student.id}>
+            <tr key={student.id}>
               <th scope="row">{index+1}</th>
               <td>
                 <button type='button' className='btn btn-sm btn-info-outline' onClick={() => onUpdateCta(student)} data-bs-toggle="modal" data-bs-target="#studentFormModal">✏️</button>
