@@ -15,9 +15,17 @@ function Student() {
   const dispatch = useDispatch()
 
   const [studentId, setStudentId] = useState('')
+
   const [fullname, setFullname] = useState('')
   const [phone, setPhone] = useState('')
   const [email, setEmail] = useState('')
+  const [dob, setDob] = useState('')
+  const [gender, setGender] = useState('')
+  const [address, setAddress] = useState('')
+  const [course, setCourse] = useState('')
+  const [enrolmentDate, setEnrolmentDate] = useState('')
+  const [status, setStatus] = useState('active')
+  const [profilePic, setProfilePic] = useState('')
 
   useEffect(() => {
     // onLoad()
@@ -40,11 +48,7 @@ function Student() {
       return
     }
 
-    const studentObj = {
-      fullname: fullname,
-      phone: phone,
-      email: email
-    }
+    const studentObj = createStudentObj(fullname, phone, email, dob, gender, address, course, enrolmentDate, status, profilePic)
 
     // try {
     //   const {data} = await axios.post(`${baseUrl}/students`, studentObj)
@@ -70,11 +74,7 @@ function Student() {
       return
     }
 
-    const studentObj = {
-      fullname: fullname,
-      phone: phone,
-      email: email
-    }
+    const studentObj = createStudentObj(fullname, phone, email, dob, gender, address, course, enrolmentDate, status, profilePic)
 
     // try {
     //   const {data} = await axios.put(`${baseUrl}/students/${studentId}`, studentObj)
@@ -113,10 +113,58 @@ function Student() {
     onResetForm()
   }
   
+  const onFileChange = (event) => {
+    const file = event.target.files[0]
+
+    if(!file) return
+
+    // validate file type
+    if(!file.type.startsWith('image/')) {
+      alert('Only image files are allowed!')
+      return
+    }
+
+    // limit file size (2MB)
+    if(file.size > 2*1024*1024) {
+      alert('Image must be less than 2MB!')
+      return
+    }
+
+    const reader = new FileReader()
+
+    reader.onload = () => {
+      setProfilePic(reader.result) // base64 string
+    }
+
+    reader.readAsDataURL(file)
+  }
+
+  const createStudentObj = (fullname, phone, email, dob, gender, address, course, enrolmentDate, status, profilePic) => {
+    return {
+      fullname: fullname,
+      phone: phone,
+      email: email,
+      dob: dob,
+      gender: gender,
+      address: address,
+      course: course,
+      enrolmentDate: enrolmentDate,
+      status: status,
+      profilePic: profilePic
+    }
+  }
+
   const onUpdateCta = (student) => {
     setFullname(student.fullname)
     setPhone(student.phone)
     setEmail(student.email)
+    setDob(student.dob)
+    setGender(student.gender)
+    setAddress(student.address)
+    setCourse(student.course)
+    setEnrolmentDate(student.enrolmentDate)
+    setStatus(student.status)
+    setProfilePic(student.profilePic)
 
     setStudentId(student.id)
   }
@@ -125,6 +173,13 @@ function Student() {
     setFullname('')
     setPhone('')
     setEmail('')
+    setDob('')
+    setGender('')
+    setAddress('')
+    setCourse('')
+    setEnrolmentDate('')
+    setStatus('active')
+    setProfilePic('')
 
     setStudentId('')
   }
@@ -144,9 +199,16 @@ function Student() {
           <th scope="col">update</th>
           <th scope="col">delete</th>
           <th scope="col">id</th>
+          <th scope="col">profilePic</th>
           <th scope="col">fullname</th>
           <th scope="col">phone</th>
           <th scope="col">email</th>
+          <th scope="col">dob</th>
+          <th scope="col">gender</th>
+          <th scope="col">address</th>
+          <th scope="col">course</th>
+          <th scope="col">enrolmentDate</th>
+          <th scope="col">status</th>
         </tr>
       </thead>
       <tbody>
@@ -161,9 +223,18 @@ function Student() {
                 <button type='button' className='btn btn-sm btn-secondary-outline' onClick={() => onDelete(student.id)}>🗑️</button>
               </td>
               <td>{student.id}</td>
+              <td>
+                <img src={student.profilePic || 'https://placehold.co/40'} width='40' height='40' style={{borderRadius: '50%', objectFit: 'cover'}} alt='Profile pic' />
+              </td>
               <td>{student.fullname}</td>
               <td>{student.phone}</td>
               <td>{student.email}</td>
+              <td>{student.dob}</td>
+              <td>{student.gender}</td>
+              <td>{student.address}</td>
+              <td>{student.course}</td>
+              <td>{student.enrolmentDate}</td>
+              <td>{student.status}</td>
             </tr>
           )) : null
         }
@@ -180,8 +251,27 @@ function Student() {
           </div>
           <div className="modal-body">
             <form>
+
               <div className="row g-3 align-items-center mb-3">
                 <div id="detailsHelp" className="form-text">We'll never share your personal details with anyone else.</div>
+                
+                <div className='col'>
+                  <label htmlFor="profilePic" className="form-label">Profile Pic URL</label>
+                </div>
+                <div className='col'>
+                  <input type="file" accept='image/*' onChange={onFileChange} className="form-control" id="profilePic" />
+                  {
+                    profilePic && (
+                      <>
+                        <img src={profilePic} alt='Profile pic' width="90" height="90" className='mt-2' style={{borderRadius: '50%', objectFit: 'cover'}} />
+                        <p>Image selected ✅</p>
+                      </>
+                    )
+                  }
+                </div>
+              </div>
+
+              <div className="row g-3 align-items-center mb-3">
                 <div className='col'>
                   <label htmlFor="fullname" className="form-label">fullname</label>
                 </div>
@@ -189,6 +279,7 @@ function Student() {
                   <input value={fullname} onChange={(e) => setFullname(e.target.value)} type="text" className="form-control" id="fullname" aria-describedby="detailsHelp" />
                 </div>
               </div>
+              
               <div className="row g-3 align-items-center mb-3">
                 <div className='col'>
                   <label htmlFor="phone" className="form-label">phone</label>
@@ -197,6 +288,7 @@ function Student() {
                   <input value={phone} onChange={(e) => setPhone(e.target.value)} type="text" className="form-control" id="phone" aria-describedby="detailsHelp" />
                 </div>
               </div>
+
               <div className="row g-3 align-items-center mb-3">
                 <div className='col'>
                   <label htmlFor="email" className="form-label">email</label>
@@ -205,6 +297,70 @@ function Student() {
                   <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" className="form-control" id="email" aria-describedby="detailsHelp" />
                 </div>
               </div>
+              
+              <div className="row g-3 align-items-center mb-3">
+                <div className='col'>
+                  <label htmlFor="dob" className="form-label">date of birth</label>
+                </div>
+                <div className='col'>
+                  <input value={dob} onChange={(e) => setDob(e.target.value)} type="date" className="form-control" id="dob" aria-describedby="detailsHelp" />
+                </div>
+              </div>
+
+              <div className="row g-3 align-items-center mb-3">
+                <div className='col'>
+                  <label htmlFor="gender" className="form-label">gender</label>
+                </div>
+                <div className='col'>
+                  <select value={gender} onChange={(e) => setGender(e.target.value)} className="form-control" id="gender">
+                    <option value='' selected>Select</option>
+                    <option value='female'>female</option>
+                    <option value='male'>male</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="row g-3 align-items-center mb-3">
+                <div className='col'>
+                  <label htmlFor="address" className="form-label">address</label>
+                </div>
+                <div className='col'>
+                  <textarea type="text" value={address} onChange={(e) => setAddress(e.target.value)} className="form-control" id="address">
+                  </textarea>
+                </div>
+              </div>
+
+              <div className="row g-3 align-items-center mb-3">
+                <div className='col'>
+                  <label htmlFor="course" className="form-label">course</label>
+                </div>
+                <div className='col'>
+                  <input type="text" value={course} onChange={(e) => setCourse(e.target.value)} className="form-control" id="course" />
+                </div>
+              </div>
+
+              <div className="row g-3 align-items-center mb-3">
+                <div className='col'>
+                  <label htmlFor="enrolmentDate" className="form-label">enrolmentDate</label>
+                </div>
+                <div className='col'>
+                  <input type='date' value={enrolmentDate} onChange={(e) => setEnrolmentDate(e.target.value)} className="form-control" id="enrolmentDate" />
+                </div>
+              </div>
+
+              <div className="row g-3 align-items-center mb-3">
+                <div className='col'>
+                  <label htmlFor="status" className="form-label">status</label>
+                </div>
+                <div className='col'>
+                  <select value={status} onChange={(e) => setStatus(e.target.value)} className="form-control" id="status">
+                    <option value='active' selected>active</option>
+                    <option value='inactive'>inactive</option>
+                    <option value='graduated'>graduated</option>
+                  </select>
+                </div>
+              </div>
+
             </form>
           </div>
           <div className="modal-footer">
