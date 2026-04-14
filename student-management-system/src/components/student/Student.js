@@ -313,7 +313,7 @@ function Student() {
                 </div>
                 <div className='col'>
                   <select value={gender} onChange={(e) => setGender(e.target.value)} className="form-control" id="gender">
-                    <option value='' selected>Select</option>
+                    <option value='' defaultValue>Select</option>
                     <option value='female'>female</option>
                     <option value='male'>male</option>
                   </select>
@@ -354,7 +354,7 @@ function Student() {
                 </div>
                 <div className='col'>
                   <select value={status} onChange={(e) => setStatus(e.target.value)} className="form-control" id="status">
-                    <option value='active' selected>active</option>
+                    <option value='active' defaultValue>active</option>
                     <option value='inactive'>inactive</option>
                     <option value='graduated'>graduated</option>
                   </select>
