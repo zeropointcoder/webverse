@@ -9,5 +9,5 @@
 | 5 | [Student Registration System](https://github.com/zeropointcoder/webverse/tree/main/student-registration-system) | React |
 | 6 | [Bookshop](https://github.com/zeropointcoder/webverse/tree/main/bookshop) | React |
 | 7 | [Eatery Menu Dashboard](https://github.com/zeropointcoder/webverse/tree/main/eatery-menu-dashboard) | Vue 3 |
-| 8 | [Eatery Menu Manager](https://github.com/zeropointcoder/webverse/tree/main/eatery-menu-manager) | Vue 3 |
+| 8 | [Eatery Access Portal](https://github.com/zeropointcoder/webverse/tree/main/eatery-access-portal) | Vue 3 |
 | 9 | [Food Supermarket](https://github.com/zeropointcoder/webverse/tree/main/food-supermarket) | Vue 3 |
