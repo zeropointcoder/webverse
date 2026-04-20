@@ -1,4 +1,4 @@
-# EmployeeManagementSystem
+# employee-management-system
 
 ## 1. Install dependencies
 
@@ -17,4 +17,4 @@ ng serve
 ## Notes
 
 * Backend uses json-server (mock REST API)
-* Data persists locally in db.json
+* Data persists locally in db.json5

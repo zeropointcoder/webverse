@@ -1,4 +1,4 @@
-# StudentManagementSystem
+# student-management-system
 
 ## 1. Install dependencies
 
@@ -17,7 +17,7 @@ npm start
 ## Notes
 
 * Backend uses json-server (mock REST API)
-* Data persists locally in db.json
+* Data persists locally in db.json5
 
 
 # Getting Started with Create React App

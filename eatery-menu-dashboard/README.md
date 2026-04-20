@@ -1,14 +1,24 @@
-# eatery1-menu-dashboard
+# eatery-menu-dashboard
 
-## Project setup
-```
+## 1. Install dependencies
+
 npm install
-```
 
-### Compiles and hot-reloads for development
-```
+## 2. Start mock backend in a separate terminal (needs json-server installed)
+
+json-server --watch db.json5
+
+## 3. Start frontend
+
 npm run serve
-```
+
+---
+
+## Notes
+
+* Backend uses json-server (mock REST API)
+* Data persists locally in db.json5
+
 
 ### Compiles and minifies for production
 ```
