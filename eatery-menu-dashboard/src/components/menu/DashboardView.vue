@@ -6,7 +6,7 @@ const store = inject('store')
 
 // const baseUrl = 'http://localhost:3000/eatery'
 
-const recipes = ref([])
+// const recipes = ref([])
 // const recipeNew = ref({})
 // const recipeEdit = ref({})
 
