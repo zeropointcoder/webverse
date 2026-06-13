@@ -4,7 +4,7 @@ function Foot() {
   return (
     <footer className="navbar bg-dark">
       <div className="container">
-        <small className="my-2 text-uppercase text-light">&copy;{new Date().getFullYear()} &middot; Student Management System</small>
+        <small className="my-2 text-uppercase text-light">&copy;{new Date().getFullYear()} &middot; Student Access Portal</small>
       </div>
     </footer>
   )
