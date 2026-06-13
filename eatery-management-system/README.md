@@ -1,4 +1,4 @@
-# eatery-menu-dashboard
+# eatery-management-system
 
 ## 1. Install dependencies
 
