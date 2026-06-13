@@ -218,7 +218,7 @@ const onCloseModal = () => {
         <div class="modal-body">
           <form>
             <div class="row g-3 align-items-center mb-3">
-                <div id="detailsHelp" class="form-text">We'll never share your personal details with anyone else.</div>
+                <div id="detailsHelp" class="form-text">We will never share your personal details with anyone else.</div>
 
                 <div class="col">
                     <label for="dish" class="form-label">dish</label>
