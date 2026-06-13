@@ -1,0 +1,20 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+    <h1>Employee Login</h1>
+    <div class="mb-3">
+        <label for="email" class="form-label">email</label>
+        <input formControlName="email" type="email" class="form-control" id="email" placeholder="Email" aria-describedby="userHelp" />
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">password</label>
+        <input formControlName="password" type="password" class="form-control" id="password" placeholder="Password" aria-describedby="userHelp" />
+    </div>
+    <button type="submit" class="btn btn-sm btn-danger">Login</button>
+</form>
+
+@if (!!errorMessage) {
+    <p class="text-danger">{{errorMessage}}</p>
+}
+
+<p class="my-3">
+    Not registered yet? <a routerLink="/register">Create an account</a>
+</p>
