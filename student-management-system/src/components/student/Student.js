@@ -253,7 +253,7 @@ function Student() {
             <form>
 
               <div className="row g-3 align-items-center mb-3">
-                <div id="detailsHelp" className="form-text">We'll never share your personal details with anyone else.</div>
+                <div id="detailsHelp" className="form-text">We will never share your personal details with anyone else.</div>
                 
                 <div className='col'>
                   <label htmlFor="profilePic" className="form-label">Profile Pic URL</label>
