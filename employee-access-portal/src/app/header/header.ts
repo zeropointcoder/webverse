@@ -18,11 +18,13 @@ export class Header implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.auth.currentUser$.subscribe(
-      user => {
+    this.auth.currentUser$.subscribe({
+      next: user => {
         this.user = user
-      }
-    )
+      },
+      error: err => console.error(err?.message),
+      complete: () => {}
+    })
   }
 
   logout() {
