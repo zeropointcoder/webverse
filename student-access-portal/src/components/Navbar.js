@@ -6,6 +6,7 @@ function Navbar() {
     <nav className="navbar bg-dark">
       <div className="container">
         <Link to={'/'} className="navbar-brand text-uppercase text-light">Student Access Portal</Link>
+        
         <div className="d-flex align-items-center text-light">
             <span className="me-2">Welcome <span className="text-info">username</span></span>
             

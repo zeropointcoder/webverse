@@ -6,12 +6,8 @@ export default {
 </script>
 
 <script setup>
-import { provide } from 'vue'
-import store from './store'
 import HeaderView from './components/HeaderView.vue'
 import FooterView from './components/FooterView.vue'
-
-provide('store', store)
 
 </script>
 
