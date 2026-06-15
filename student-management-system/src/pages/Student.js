@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 // import axios from 'axios'
 // import {onAddSuccess, onLoadSuccess, onUpdateSuccess, onDeleteSuccess, onLoadThunk, onAddThunk, onUpdateThunk, onDeleteThunk} from '../../store/student/studentSlice'
-import {onLoadThunk, onAddThunk, onUpdateThunk, onDeleteThunk} from '../../store/student/studentSlice'
+import {onLoadThunk, onAddThunk, onUpdateThunk, onDeleteThunk} from '../store/student/studentSlice'
 
 function Student() {
   // const baseUrl = `http://localhost:5400`

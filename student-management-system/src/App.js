@@ -1,7 +1,7 @@
 import {Routes, Route, BrowserRouter, Navigate} from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Foot from './components/Foot'
-import Student from './components/student/Student'
+import Student from './pages/Student'
 import './App.css'
 
 function App() {
