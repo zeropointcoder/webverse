@@ -28,6 +28,8 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
+    this.errorMessage = ''
+    
     if(this.loginForm.value.email === '' || this.loginForm.value.password === '') {
       return
     }

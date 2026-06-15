@@ -2,8 +2,12 @@
     <h1>Employee Registration Form</h1>
     <div class="mb-3">
         <div id="userHelp" class="form-text mb-3">We will never share your personal details with anyone else.</div>
-        <label for="username" class="form-label">Username</label>
-        <input formControlName="username" type="text" class="form-control" id="username" placeholder="Username" aria-describedby="userHelp" />
+        <label for="fullname" class="form-label">fullname</label>
+        <input formControlName="fullname" type="text" class="form-control" id="fullname" placeholder="fullname" aria-describedby="userHelp" />
+    </div>
+    <div class="mb-3">
+        <label for="position" class="form-label">position</label>
+        <input formControlName="position" type="text" class="form-control" id="position" placeholder="position" aria-describedby="userHelp" />
     </div>
     <div class="mb-3">
         <label for="email" class="form-label">Email</label>
@@ -15,6 +19,14 @@
     </div>
     <button type="submit" class="btn btn-sm btn-danger">Register</button>
 </form>
+
+@if(!!errorMessage) {
+    <p class="text-danger mt-3">{{ errorMessage }}</p>
+}
+
+@if(!!successMessage) {
+    <p class="text-primary mt-3">{{ successMessage }}</p>
+}
 
 <p class="my-3">
     Already have an account? <a routerLink="/login">Login here</a>

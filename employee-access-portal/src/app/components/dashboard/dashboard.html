@@ -1,34 +1,26 @@
-<h2 class="mb-3">Employee Dashboard</h2>
+<h2 class="mb-3">Registered Employee Accounts</h2>
+
+<h4 class="mb-3">Total registered employee: {{ employees.length }}</h4>
 
 <div class="table-responsive">
-    <table class="table table-danger">
-      <thead>
+  <table class="table table-danger">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">fullname</th>
+        <th scope="col">position</th>
+        <th scope="col">email</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (emp of employees; track $index) {
         <tr>
-          <th scope="col">id</th>
-          <th scope="col">fullname</th>
-          <th scope="col">phone</th>
-          <th scope="col">email</th>
+          <th scope="row">{{ emp.id }}</th>
+          <td>{{ emp.fullname }}</td>
+          <td>{{ emp.position }}</td>
+          <td>{{ emp.email}}</td>
         </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark Otto</td>
-          <td>078 2746 3432</td>
-          <td>otto@gmail.com</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob Thornton</td>
-          <td>075 2476 8925</td>
-          <td>thornton@gmail.com</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry Bird</td>
-          <td>079 5634 8794</td>
-          <td>bird@gmail.com</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+      }
+    </tbody>
+  </table>
+</div>

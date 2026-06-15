@@ -11,7 +11,9 @@ import { Router, RouterLink } from "@angular/router"
   styleUrl: "./register.css",
 })
 export class RegisterComponent implements OnInit {
-  registerForm!: FormGroup;
+  registerForm!: FormGroup
+  errorMessage: string = ''
+  successMessage: string = ''
 
   constructor(
     private fb: FormBuilder,
@@ -21,29 +23,34 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
-      username: ['', Validators.required],
+      fullname: ['', Validators.required],
+      position: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
     })
   }
   
   register(): void {
-    if(this.registerForm.value.username === '' || this.registerForm.value.email === '' || this.registerForm.value.password === '') {
+    this.successMessage = ''
+    this.errorMessage = ''
+    
+    if(this.registerForm.value.fullname === '' || this.registerForm.value.position === '' || this.registerForm.value.email === '' || this.registerForm.value.password === '') {
       return
     }
 
     const success = this.auth.register({
       id: Date.now(),
-      username: this.registerForm.value.username,
+      fullname: this.registerForm.value.fullname,
+      position: this.registerForm.value.position,
       email: this.registerForm.value.email,
       password: this.registerForm.value.password
     })
 
     if(success) {
-      alert('Registration successful')
-      this.router.navigate(['/login'])
+      this.successMessage = 'Registration successful! Redirecting to login page..'
+      setTimeout(() => this.router.navigate(['/login']), 3000)
     } else {
-      alert('Email already exists')
+      this.errorMessage = 'Email already exists'
     }
   }
 }
