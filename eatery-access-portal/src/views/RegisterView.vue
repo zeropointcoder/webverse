@@ -12,6 +12,9 @@ const success = ref('')
 const err = ref('')
 
 const register = () => {
+    success.value = ''
+    err.value = ''
+    
     if(fullname.value === '' || email.value === '' || password.value === '') {
         return
     }

@@ -3,15 +3,9 @@ import { ref } from 'vue'
 
 export const useAuthStore = defineStore('auth', () => {
 
-    let userData = null
-
-    try {
-        userData = JSON.parse(localStorage.getItem('currentUser'))
-    } catch (error) {
-        localStorage.removeItem('currentUser')
-    }
-
-    const user = ref(userData)
+    const user = ref(
+        JSON.parse(localStorage.getItem('currentUser')) || []
+    )
 
     const users = ref(
         JSON.parse(localStorage.getItem('users')) || []

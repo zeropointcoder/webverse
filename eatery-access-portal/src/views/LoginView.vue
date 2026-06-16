@@ -12,6 +12,8 @@ const router = useRouter()
 const authStore = useAuthStore()
 
 const login = () => {
+    err.value = ''
+    
     if(email.value === '' && password.value === '') {
         return
     }
