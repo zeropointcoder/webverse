@@ -1,34 +1,36 @@
+<script setup>
+import { onMounted, ref } from 'vue'
+import { useAuthStore } from '@/store/auth'
+
+const members = ref([])
+const authStore = useAuthStore()
+
+onMounted(() => {
+    members.value = authStore.users
+})
+
+</script>
+
 <template>
-    <h2 class="mb-3">Eatery Dashboard</h2>
+    <h2 class="mb-3">Eatery Manager Dashboard</h2>
+    <h4 class="mb-3">Total registered members: {{ members.length }}</h4>
 
     <div class="table-responsive">
         <table class="table table-success">
             <thead>
                 <tr>
                 <th scope="col">id</th>
-                <th scope="col">dish</th>
-                <th scope="col">recipe</th>
-                <th scope="col">price</th>
+                <th scope="col">fullname</th>
+                <th scope="col">email</th>
+                <th scope="col">password</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Pasta</td>
-                    <td>Pasta, tomato sauce, cheese</td>
-                    <td>£12</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Burger</td>
-                    <td>Bun, chicken patty, lettuce</td>
-                    <td>£10</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Salad</td>
-                    <td>Lettuce, cucumber, tomato</td>
-                    <td>£8</td>
+                <tr v-for="(mgr, index) in members" :key="index">
+                    <th scope="row">{{ mgr.id }}</th>
+                    <td>{{ mgr.fullname }}</td>
+                    <td>{{ mgr.email }}</td>
+                    <td>{{ mgr.password }}</td>
                 </tr>
             </tbody>
         </table>

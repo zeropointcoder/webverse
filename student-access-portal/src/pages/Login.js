@@ -39,7 +39,7 @@ function Login() {
 
   return (
     <div>
-      <h2>Student login</h2>
+      <h2>Student Login</h2>
 
       {/* {
         error && (

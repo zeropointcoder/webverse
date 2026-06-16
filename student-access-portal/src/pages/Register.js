@@ -49,7 +49,7 @@ function Register() {
 
   return (
     <div>
-      <h2>Student registration</h2>
+      <h2>Student Registration</h2>
 
       {/* {
         error && (
