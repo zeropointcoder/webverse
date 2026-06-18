@@ -9,6 +9,12 @@
     </div>
 }
 
+@if(toastMessage$ | async; as msg) {
+    <div class="col-12">
+        <div class="alert alert-info">{{ msg }}</div>
+    </div>
+}
+
 @for(product of products$ | async; track product.id) {
     <div class="col-4">
         <div class="card mb-3">
