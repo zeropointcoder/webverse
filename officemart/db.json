@@ -1,0 +1,36 @@
+{
+  "products": [
+    {
+        "id": 1,
+        "name": "Notebook",
+        "category": "Stationery",
+        "description": "A4 Notebook",
+        "price": 4.99,
+        "imageUrl": ""
+      },
+      {
+        "id": 2,
+        "name": "Gel Pen",
+        "category": "Stationery",
+        "description": "Gel pen pack",
+        "price": 1.99,
+        "imageUrl": ""
+      },
+      {
+        "id": 3,
+        "name": "Keyboard",
+        "category": "Electronics",
+        "description": "USB Keyboard",
+        "price": 34.99,
+        "imageUrl": ""
+      },
+      {
+        "id": 4,
+        "name": "Monitor",
+        "category": "Electronics",
+        "description": "24 inch Monitor",
+        "price": 149.99,
+        "imageUrl": ""
+      }
+  ]
+}

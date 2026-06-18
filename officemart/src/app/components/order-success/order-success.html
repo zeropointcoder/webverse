@@ -1,0 +1,30 @@
+@if(order$ | async; as order) {
+
+    <div class="card" style="width: 50%;">
+        <div class="card-body">
+            <h5 class="card-title">Order successful</h5>
+            <p class="card-text">Your order has been placed successfully.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Order ID</strong>: {{ order.orderId }}</li>
+            <li class="list-group-item"><strong>Total</strong>: £{{ order.totalAmount.toFixed(2) }}</li>
+            <li class="list-group-item"><strong>Status</strong>: £{{ order.status }}</li>
+            <li class="list-group-item"><strong>Items ordered</strong>: {{ order.items.length }}</li>
+        </ul>
+        <div class="card-body">
+            <button routerLink="/" type="button" class="btn btn-sm btn-warning">Continue shopping</button>
+        </div>
+    </div>
+
+} @else {
+
+    <div class="card" style="width: 50%;">
+        <div class="card-body">
+            <h5 class="card-title">Order details not available</h5>
+            <p class="card-text">No order information could be found.</p>
+        </div>
+        <div class="card-body">
+            <button routerLink="/" type="button" class="btn btn-sm btn-warning">Back to products</button>
+        </div>
+    </div>
+}

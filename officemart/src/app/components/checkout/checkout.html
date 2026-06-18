@@ -1,0 +1,36 @@
+<h2>Checkout</h2>
+
+<h3>Order summary</h3>
+
+<p>Total amount: <strong>£{{ totalAmount.toFixed(2) }}</strong></p>
+
+<hr />
+
+<form [formGroup]="checkoutForm" (ngSubmit)="placeOrder()">
+    <div class="mb-3">
+        <label for="fullname" class="form-label">fullname</label>
+        <input type="text" formControlName="fullname" class="form-control" id="fullname" placeholder="Enter employee name" />
+
+        @if(checkoutForm.get('fullname')?.touched && checkoutForm.get('fullname')?.invalid) {
+           <small class="text-danger">Full name is required</small> 
+        }
+    </div>
+    <div class="mb-3">
+        <label for="department" class="form-label">department</label>
+        <input type="text" formControlName="department" class="form-control" id="department" placeholder="Enter employee department" />
+
+        @if(checkoutForm.get('department')?.touched && checkoutForm.get('department')?.invalid) {
+           <small class="text-danger">Department is required</small> 
+        }
+    </div>
+    <div class="mb-3">
+        <label for="location" class="form-label">location</label>
+        <input type="text" formControlName="location" class="form-control" id="location" placeholder="Enter employee location" />
+
+        @if(checkoutForm.get('location')?.touched && checkoutForm.get('location')?.invalid) {
+           <small class="text-danger">Location is required</small> 
+        }
+    </div>
+
+    <button type="submit" [disabled]="checkoutForm.invalid" class="btn btn-sm btn-info">Place Order</button>
+</form>

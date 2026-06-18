@@ -1,0 +1,48 @@
+<h2>Office Products</h2>
+
+<div class="row">
+@if(loading$ | async) {
+    <div class="col-12">
+        <div class="alert alert-info">
+            <p>Loading products..</p>
+        </div>
+    </div>
+}
+
+@for(product of products$ | async; track product.id) {
+    <div class="col-4">
+        <div class="card mb-3">
+            <img [src]="product.imageUrl || 'images/product.png'" class="text-center m-auto mt-4" width="25%" [alt]="product.name" />
+
+            <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.description }}</p>
+            </div>
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">£{{ product.price }}</li>
+            </ul>
+
+            <div class="card-body">
+                <button type="button" (click)="addToCart(product)" class="btn btn-sm btn-danger">Add to cart</button>
+            </div>
+        </div>
+    </div>
+}
+
+@empty {
+    <div class="col-12">
+        <div class="alert alert-warning">
+            <p>No product available</p>
+        </div>
+    </div>
+}
+</div>
+
+
+
+
+
+
+
+

@@ -2,7 +2,7 @@ import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import './App.css'
 import Navbar from './components/Navbar'
 import Foot from './components/Foot'
-import Shop from './components/Shop' 
+import Shop from './pages/Shop' 
 
 function App() {
   return (
