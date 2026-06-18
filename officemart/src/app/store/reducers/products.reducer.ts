@@ -10,7 +10,7 @@ export interface ProductState {
 
 export const initialState: ProductState = {
     products: [],
-    loading: false,
+    loading: true,
     error: null
 }
 

@@ -1,19 +1,17 @@
 <div class="card" style="width: 50%;">
-    <h2>Order failed</h2>
-
-    <p class="text-secondary">Unfortunately, we could not process your order.</p>
-
     <div class="card-body">
-        @if(error$ | async; as error) {
-            <h5 class="card-title">Reason:</h5>
-            <p class="card-text">{{ error }}</p>
-        } @else {
-            <p class="card-text">An unexpected error occurred while processing your order.</p>
-        }
-        
+        <h5 class="card-title">Order failed</h5>
+        <p class="card-text">Unfortunately, we could not process your order.</p>
+        <p class="text-primary">
+            @if(error$ | async; as error) {
+                <strong>Reason:</strong> {{ error }}
+            } @else {
+                An unexpected error occurred while processing your order.
+            }
+        </p>
     </div>
-    <div class="card-body d-flex justify-content-between">
-        <button routerLink="/checkout" type="button" class="btn btn-sm btn-info">Retry checkout</button>
+    <div class="card-body">
+        <button routerLink="/checkout" type="button" class="btn btn-sm btn-info me-3">Retry checkout</button>
 
         <button routerLink="/" type="button" class="btn btn-sm btn-warning">Back to products</button>
     </div>

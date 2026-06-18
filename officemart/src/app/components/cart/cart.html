@@ -1,7 +1,7 @@
 <h2 class="mb-3">Shopping Cart 🛒 ({{ itemCount$ | async }} items)</h2>
 
 <div class="row">
-    <div class="col-8">
+    <div class="col-9">
         <div class="table-responsive">
             <table class="table table-danger">
                 <thead>
@@ -19,7 +19,7 @@
                     @if(cartItems$ | async; as cartItems) {
                         @if(cartItems.length === 0) {
                             <tr>
-                                <th scope="row">#</th>
+                                <th scope="row"></th>
                                 <td colspan="6">Your cart is empty</td>
                             </tr>
                         } @else {
@@ -40,13 +40,13 @@
             </table>
         </div>
     </div>
-    <div class="col-4">
+    <div class="col-3">
         <h2 class="mb-3">Order summary 🛒</h2>
         <h3 class="mb-3">Total: £{{ (total$ | async)?.toFixed(2) }}</h3>
-        <div class="d-flex justify-content-space-between">
-            <button type="button" (click)="clearCart()" class="btn btn-sm btn-secondary">Clear cart</button>
-
+        <div class="d-flex justify-content-between">
             <button type="button" routerLink="/checkout" class="btn btn-sm btn-info">Checkout</button>
+
+            <button type="button" (click)="clearCart()" class="btn btn-sm btn-secondary">Clear cart</button>
         </div>
     </div>
 </div>

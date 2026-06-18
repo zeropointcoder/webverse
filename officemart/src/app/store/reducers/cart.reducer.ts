@@ -1,6 +1,7 @@
 import { createReducer, on } from "@ngrx/store"
 import { CartItem } from "../../models/cart-item.model"
 import { addToCart, clearCart, removeFromCart } from "../actions/cart.actions"
+import { checkoutSuccess } from "../actions/checkout.actions"
 
 export interface CartState {
     items: CartItem[]
@@ -47,4 +48,8 @@ export const cartReducer = createReducer(
     on(clearCart, () => ({
         items: []
     })),
+
+    on(checkoutSuccess, () => ({
+        items: []
+    }))
 )
