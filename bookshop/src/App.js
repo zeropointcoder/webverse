@@ -1,8 +1,8 @@
-import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
+import {BrowserRouter} from 'react-router-dom'
 import './App.css'
 import Navbar from './components/Navbar'
 import Foot from './components/Foot'
-import Shop from './pages/Shop' 
+import AppRoutes from './routes/AppRoutes'
 
 function App() {
   return (
@@ -12,10 +12,7 @@ function App() {
 
       <main className='my-5' style={{minHeight: '100vh',}}>
         <div className='container'>
-          <Routes>
-            <Route path={'/'} element={<Shop></Shop>}></Route>
-            <Route path={'*'} element={<Navigate to={'/'} />}></Route>
-          </Routes>
+          <AppRoutes></AppRoutes>
         </div>
       </main>
 

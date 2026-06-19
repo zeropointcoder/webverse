@@ -7,9 +7,9 @@
         </div>
         <ul class="list-group list-group-flush">
             <li class="list-group-item"><strong>Order ID</strong>: {{ order.orderId }}</li>
-            <li class="list-group-item"><strong>Total</strong>: £{{ order.totalAmount.toFixed(2) }}</li>
             <li class="list-group-item"><strong>Status</strong>: {{ order.status }}</li>
             <li class="list-group-item"><strong>Items ordered</strong>: {{ order.items.length }}</li>
+            <li class="list-group-item"><strong>Total</strong>: £{{ order.totalAmount.toFixed(2) }}</li>
         </ul>
         <div class="card-body">
             <button routerLink="/" type="button" class="btn btn-sm btn-warning">Continue shopping</button>
