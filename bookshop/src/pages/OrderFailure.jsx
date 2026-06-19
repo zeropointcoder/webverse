@@ -1,11 +1,10 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
 import {resetOrder} from '../store/cart/cartSlice'
 
 function OrderFailure() {
   const dispatch = useDispatch()
-  const navigate = useNavigate()
 
   const error = useSelector((state) => state.cart.error)
 

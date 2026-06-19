@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import CheckoutForm from '../components/CheckoutForm'
 import OrderSummary from '../components/OrderSummary'
 import { processOrder } from '../store/cart/cartSlice'

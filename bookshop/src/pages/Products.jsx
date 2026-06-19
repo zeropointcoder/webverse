@@ -1,7 +1,6 @@
 import React from 'react'
 import ProductCard from '../components/ProductCard'
 import {books} from '../data/books'
-import { useSelector } from 'react-redux'
 
 function Products() {
 

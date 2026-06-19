@@ -9,7 +9,7 @@ function ProductCard({book}) {
   const onAddToCart = () => {
     dispatch(addToCart(book))
 
-    toast.success(`${book.title} added to cart}`)
+    toast.success(`${book.title} added to cart`)
   }
 
   return (
