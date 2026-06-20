@@ -7,6 +7,7 @@
 <hr />
 
 <form [formGroup]="checkoutForm" (ngSubmit)="placeOrder()">
+    <h5>Employee details</h5>
     <div class="mb-3">
         <label for="fullname" class="form-label">fullname</label>
         <input type="text" formControlName="fullname" class="form-control" id="fullname" placeholder="Enter employee name" />
@@ -29,6 +30,35 @@
 
         @if(checkoutForm.get('location')?.touched && checkoutForm.get('location')?.invalid) {
            <small class="text-danger">Location is required</small> 
+        }
+    </div>
+
+    <h5>Payment details</h5>
+
+    <div class="mb-3">
+        <label for="cardnumber" class="form-label">Card number</label>
+        <input type="text" formControlName="cardnumber" class="form-control" id="cardnumber" placeholder="Enter card number" />
+
+        @if(checkoutForm.get('cardnumber')?.touched && checkoutForm.get('cardnumber')?.invalid) {
+           <small class="text-danger">Card number is required</small> 
+        }
+    </div>
+
+    <div class="mb-3">
+        <label for="expiry" class="form-label">expiry</label>
+        <input type="text" formControlName="expiry" class="form-control" id="expiry" placeholder="Enter card expiry" />
+
+        @if(checkoutForm.get('expiry')?.touched && checkoutForm.get('expiry')?.invalid) {
+           <small class="text-danger">Card expiry is required</small> 
+        }
+    </div>
+
+    <div class="mb-3">
+        <label for="cvv" class="form-label">cvv</label>
+        <input type="text" formControlName="cvv" class="form-control" id="cvv" placeholder="Enter card cvv" />
+
+        @if(checkoutForm.get('cvv')?.touched && checkoutForm.get('cvv')?.invalid) {
+           <small class="text-danger">CVV is required</small> 
         }
     </div>
 

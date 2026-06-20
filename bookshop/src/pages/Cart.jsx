@@ -49,6 +49,7 @@ function Cart() {
           <div className="col-3">
               <h2 className="mb-3">Order summary 🛒</h2>
               <h3 className="mb-3">Total: £{total.toFixed(2)}</h3>
+              
               <div className="d-flex justify-content-between">
                   <Link to={"/checkout"} className="btn btn-sm btn-info">Proceed to checkout</Link>
 

@@ -30,7 +30,7 @@ function OrderSummary() {
                 <tbody>
                 {
                 items.map(item => (
-                    <tr>
+                    <tr key={item.id}>
                         <th scope="row">{item.id}</th>
                         <td>{item.title}</td>
                         <td>{item.author}</td>

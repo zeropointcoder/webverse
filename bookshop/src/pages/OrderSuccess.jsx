@@ -21,7 +21,7 @@ function OrderSuccess() {
             <p className="card-text">Your session may have expired or the page was refreshed.</p>
         </div>
         <div className="card-body">
-            <Link to="/" type="button" className="btn btn-sm btn-warning">Back to products</Link>
+            <Link to="/" className="btn btn-sm btn-primary">Back to products</Link>
         </div>
     </div>
     )
@@ -41,7 +41,7 @@ function OrderSuccess() {
               <li className="list-group-item"><strong>Total</strong>: £{order.total.toFixed(2)}</li>
           </ul>
           <div className="card-body">
-              <Link to="/" type="button" className="btn btn-sm btn-warning" onClick={handleContinueShopping}
+              <Link to="/" className="btn btn-sm btn-warning" onClick={handleContinueShopping}
               >Continue shopping</Link>
           </div>
       </div>

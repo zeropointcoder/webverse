@@ -7,6 +7,6 @@ import { Order } from '../models/order.model'
 })
 export class OrderService {
   placeOrder(order: Order) {
-    return throwError(() => new Error('Test order failure'));
+    return of(order)
   }
 }

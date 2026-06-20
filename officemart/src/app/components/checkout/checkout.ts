@@ -24,7 +24,10 @@ export class Checkout implements OnInit {
   checkoutForm = this.fb.group({
     fullname: ['', Validators.required],
     department: ['', Validators.required],
-    location: ['', Validators.required]
+    location: ['', Validators.required],
+    cardnumber: ['', Validators.required],
+    expiry: ['', Validators.required],
+    cvv: ['', Validators.required]
   })
 
   ngOnInit(): void {

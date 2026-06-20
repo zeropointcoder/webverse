@@ -4,8 +4,8 @@
 
         <div class="d-flex align-items-center">
             <a routerLink="/products" class="me-2 text-decoration-none text-info">products</a>&nbsp;
-            <a routerLink="/cart" class="me-2 text-decoration-none text-info">cart 🛒 
-                <span class="badge text-bg-warning">{{ cartCount$ | async }}</span>
+            
+            <a routerLink="/cart" class="me-2 text-decoration-none text-info">cart 🛒<span class="badge text-bg-warning">{{ cartCount$ | async }}</span>
             </a>
         </div>
     </div>

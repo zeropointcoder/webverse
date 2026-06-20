@@ -15,7 +15,7 @@ function ProductCard({book}) {
   return (
     <div className='col-4'>
         <div className="card mb-3">
-            <img src={book.image} className="text-center m-auto mt-4" width="100" height="100" alt={book.title} />
+            <img src={book.image} className="text-center m-auto mt-4" width="100%" height="200" alt={book.title} />
 
             <div className="card-body">
                 <h5 className="card-title">{book.title}</h5>

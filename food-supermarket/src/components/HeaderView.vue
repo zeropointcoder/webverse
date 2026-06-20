@@ -1,12 +1,20 @@
+<script setup>
+import { useCartStore } from '@/store/cartStore'
+import { ShoppingCart } from 'lucide-vue-next'
+
+const cartStore = useCartStore()
+
+</script>
+
 <template>
     <nav class="navbar bg-dark">
         <div class="container">
-            <router-link to="/" class="navbar-brand text-uppercase text-light" href="#">Food Supermarket</router-link>
+            <router-link to="/" class="navbar-brand text-uppercase text-light">Food Supermarket</router-link>
 
             <div class="d-flex align-items-center text-light">
-                <span class="me-2">Welcome <span class="text-info">username</span></span>
+                <router-link to="/products" class="me-2 text-decoration-none text-info">products</router-link>
                 
-                <button type="button" class="btn btn-sm btn-outline-warning">Logout</button>
+                <router-link to="/cart" class="me-2 text-decoration-none text-info">cart <ShoppingCart :size="22" /><span class="badge text-bg-warning">{{ cartStore.totalItems }}</span></router-link>
             </div>
         </div>
     </nav>

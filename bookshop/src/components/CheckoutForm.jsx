@@ -61,8 +61,8 @@ function CheckoutForm({onPlaceOrder, loading}) {
 
   return (
     <form onSubmit={handleSubmit}>
-        <h2>Place Order</h2>
-        <h5>Enter Student details</h5>
+        <h2>Place order</h2>
+        <h5>Student details</h5>
 
         <div className="mb-3">
             <label htmlFor="fullname" className="form-label">Fullname</label>

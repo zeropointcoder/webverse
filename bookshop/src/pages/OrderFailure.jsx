@@ -18,9 +18,9 @@ function OrderFailure() {
 
           </div>
           <div className="card-body">
-              <Link to="/checkout" onClick={() => dispatch(resetOrder())} type="button" className="btn btn-sm btn-info me-3">Retry checkout</Link>
+              <Link to="/checkout" onClick={() => dispatch(resetOrder())} className="btn btn-sm btn-info me-3">Retry checkout</Link>
 
-              <Link to="/" onClick={() => dispatch(resetOrder())} type="button" className="btn btn-sm btn-warning">Back to products</Link>
+              <Link to="/" onClick={() => dispatch(resetOrder())} className="btn btn-sm btn-warning">Back to products</Link>
           </div>
       </div>
     </>
