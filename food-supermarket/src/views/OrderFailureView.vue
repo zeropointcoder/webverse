@@ -1,5 +1,7 @@
 <script setup>
+import { useCartStore } from '@/store/cartStore'
 
+const cartStore = useCartStore()
 </script>
 
 <template>
@@ -7,7 +9,7 @@
         <div class="card-body">
             <h5 class="card-title">Order failed</h5>
             <p class="card-text">Unfortunately, we could not process your order.</p>
-            <p class="text-danger fw-bold">error</p>
+            <p class="text-danger fw-bold">{{ cartStore.orderError || 'Something went wrong.' }}</p>
         </div>
         <div class="card-body">
             <router-link to="/checkout" class="btn btn-sm btn-warning me-3">Retry checkout</router-link>

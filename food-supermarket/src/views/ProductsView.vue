@@ -2,21 +2,21 @@
 import ProductCard from '@/components/ProductCard.vue'
 import { products } from '@/data/products'
 import { useCartStore } from '@/store/cartStore'
+import { useToast } from 'vue-toastification'
 
 const cartStore = useCartStore()
+const toast = useToast()
 
 const handleAddToCart = (product) => {
     cartStore.addToCart(product)
 
-    console.log("Cart: ", cartStore.cartItems)
+    toast.success(`${product.name} added to cart`)
 }
 
 </script>
 
 <template>
     <h1 class="mb-3">Food Supermarket</h1>
-
-    <h4 class="alert alert-info">Total cart items: {{ cartStore.totalItems }}</h4>
 
     <p>Fresh groceries and ingredients for recipes.</p>
 

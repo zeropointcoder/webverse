@@ -30,8 +30,9 @@ function Cart() {
                               <th scope="col">title</th>
                               <th scope="col">author</th>
                               <th scope="col">price</th>
-                              <th scope="col">➖</th>
-                              <th scope="col">➕</th>
+                              <th scope="col">
+                                ➖ <span className="mx-3">Qty</span> ➕
+                              </th>
                               <th scope="col">subtotal</th>
                               <th scope="col">🗑️</th>
                           </tr>

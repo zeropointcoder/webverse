@@ -16,8 +16,9 @@ function CartItem({item}) {
             <td>£{item.price}</td>
             <td>
                 <button onClick={() => dispatch(decreaseQuantity(item.id))} type="button" class="btn btn-sm btn-outline-primary">➖</button>
-            </td>
-            <td>
+            
+                <span className="mx-3">{item.quantity}</span>
+                
                 <button onClick={() => dispatch(increaseQuantity(item.id))} type="button" class="btn btn-sm btn-outline-primary">➕</button>
             </td>
             <td>£{ (item.price * item.quantity).toFixed(2) }</td>

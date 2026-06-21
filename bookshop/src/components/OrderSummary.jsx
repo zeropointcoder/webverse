@@ -7,7 +7,7 @@ function OrderSummary() {
 
   const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0) 
 
-  const tax = subtotal * 0.1 // (10%)
+  const tax = subtotal * 0.1 // @ 10%
 
   const total = subtotal + tax
 
@@ -23,7 +23,7 @@ function OrderSummary() {
                         <th scope="col">title</th>
                         <th scope="col">author</th>
                         <th scope="col">price</th>
-                        <th scope="col">Quantity</th>
+                        <th scope="col">quantity</th>
                         <th scope="col">subtotal</th>
                     </tr>
                 </thead>
@@ -47,7 +47,7 @@ function OrderSummary() {
         <ul class="list-group mb-2">
             <li class="list-group-item fw-bold">Subtotal</li>
             <li class="list-group-item">£{subtotal.toFixed(2)}</li>
-            <li class="list-group-item fw-bold">Tax (10%)</li>
+            <li class="list-group-item fw-bold">Tax (@ 10%)</li>
             <li class="list-group-item">£{tax.toFixed(2)}</li>
             <li class="list-group-item fw-bold text-uppercase">Total</li>
             <li class="list-group-item">£{total.toFixed(2)}</li>
