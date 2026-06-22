@@ -5,9 +5,107 @@
 | 1 | [Employee Management System](https://github.com/zeropointcoder/webverse/tree/main/employee-management-system) | Angular 21 |
 | 2 | [Employee Access Portal](https://github.com/zeropointcoder/webverse/tree/main/employee-access-portal) | Angular 21 |
 | 3 | [OfficeMart](https://github.com/zeropointcoder/webverse/tree/main/officemart) | Angular 21 |
+| 1 | [Employee Management System](https://github.com/zeropointcoder/webverse/tree/main/employee-management-system) | Angular 21 |
+| 2 | [Employee Access Portal](https://github.com/zeropointcoder/webverse/tree/main/employee-access-portal) | Angular 21 |
+| 3 | [OfficeMart](https://github.com/zeropointcoder/webverse/tree/main/officemart) | Angular 21 |
+| 1 | [Employee Management System](https://github.com/zeropointcoder/webverse/tree/main/employee-management-system) | Angular 21 |
+| 2 | [Employee Access Portal](https://github.com/zeropointcoder/webverse/tree/main/employee-access-portal) | Angular 21 |
+| 3 | [OfficeMart](https://github.com/zeropointcoder/webverse/tree/main/officemart) | Angular 21 |
+| 1 | [Employee Management System](https://github.com/zeropointcoder/webverse/tree/main/employee-management-system) | Angular 21 |
+| 2 | [Employee Access Portal](https://github.com/zeropointcoder/webverse/tree/main/employee-access-portal) | Angular 21 |
+| 3 | [OfficeMart](https://github.com/zeropointcoder/webverse/tree/main/officemart) | Angular 21 |
+| 1 | [Employee Management System](https://github.com/zeropointcoder/webverse/tree/main/employee-management-system) | Angular 21 |
+| 2 | [Employee Access Portal](https://github.com/zeropointcoder/webverse/tree/main/employee-access-portal) | Angular 21 |
+| 3 | [OfficeMart](https://github.com/zeropointcoder/webverse/tree/main/officemart) | Angular 21 |
+| 1 | [Employee Management System](https://github.com/zeropointcoder/webverse/tree/main/employee-management-system) | Angular 21 |
+| 2 | [Employee Access Portal](https://github.com/zeropointcoder/webverse/tree/main/employee-access-portal) | Angular 21 |
+| 3 | [OfficeMart](https://github.com/zeropointcoder/webverse/tree/main/officemart) | Angular 21 |
+| 1 | [Employee Management System](https://github.com/zeropointcoder/webverse/tree/main/employee-management-system) | Angular 21 |
+| 2 | [Employee Access Portal](https://github.com/zeropointcoder/webverse/tree/main/employee-access-portal) | Angular 21 |
+| 3 | [OfficeMart](https://github.com/zeropointcoder/webverse/tree/main/officemart) | Angular 21 |
+| 1 | [Employee Management System](https://github.com/zeropointcoder/webverse/tree/main/employee-management-system) | Angular 21 |
+| 2 | [Employee Access Portal](https://github.com/zeropointcoder/webverse/tree/main/employee-access-portal) | Angular 21 |
+| 3 | [OfficeMart](https://github.com/zeropointcoder/webverse/tree/main/officemart) | Angular 21 |
+| 1 | [Employee Management System](https://github.com/zeropointcoder/webverse/tree/main/employee-management-system) | Angular 21 |
+| 2 | [Employee Access Portal](https://github.com/zeropointcoder/webverse/tree/main/employee-access-portal) | Angular 21 |
+| 3 | [OfficeMart](https://github.com/zeropointcoder/webverse/tree/main/officemart) | Angular 21 |
+| 1 | [Employee Management System](https://github.com/zeropointcoder/webverse/tree/main/employee-management-system) | Angular 21 |
+| 2 | [Employee Access Portal](https://github.com/zeropointcoder/webverse/tree/main/employee-access-portal) | Angular 21 |
+| 3 | [OfficeMart](https://github.com/zeropointcoder/webverse/tree/main/officemart) | Angular 21 |
+| 1 | [Employee Management System](https://github.com/zeropointcoder/webverse/tree/main/employee-management-system) | Angular 21 |
+| 2 | [Employee Access Portal](https://github.com/zeropointcoder/webverse/tree/main/employee-access-portal) | Angular 21 |
+| 3 | [OfficeMart](https://github.com/zeropointcoder/webverse/tree/main/officemart) | Angular 21 |
+
+
+| # | Project | Framework |
+|---|--------------|------|
 | 4 | [Student Management System](https://github.com/zeropointcoder/webverse/tree/main/student-management-system) | React |
 | 5 | [Student Access Portal](https://github.com/zeropointcoder/webverse/tree/main/student-access-portal) | React |
 | 6 | [Bookshop](https://github.com/zeropointcoder/webverse/tree/main/bookshop) | React |
+| 4 | [Student Management System](https://github.com/zeropointcoder/webverse/tree/main/student-management-system) | React |
+| 5 | [Student Access Portal](https://github.com/zeropointcoder/webverse/tree/main/student-access-portal) | React |
+| 6 | [Bookshop](https://github.com/zeropointcoder/webverse/tree/main/bookshop) | React |
+| 4 | [Student Management System](https://github.com/zeropointcoder/webverse/tree/main/student-management-system) | React |
+| 5 | [Student Access Portal](https://github.com/zeropointcoder/webverse/tree/main/student-access-portal) | React |
+| 6 | [Bookshop](https://github.com/zeropointcoder/webverse/tree/main/bookshop) | React |
+| 4 | [Student Management System](https://github.com/zeropointcoder/webverse/tree/main/student-management-system) | React |
+| 5 | [Student Access Portal](https://github.com/zeropointcoder/webverse/tree/main/student-access-portal) | React |
+| 6 | [Bookshop](https://github.com/zeropointcoder/webverse/tree/main/bookshop) | React |
+| 4 | [Student Management System](https://github.com/zeropointcoder/webverse/tree/main/student-management-system) | React |
+| 5 | [Student Access Portal](https://github.com/zeropointcoder/webverse/tree/main/student-access-portal) | React |
+| 6 | [Bookshop](https://github.com/zeropointcoder/webverse/tree/main/bookshop) | React |
+| 4 | [Student Management System](https://github.com/zeropointcoder/webverse/tree/main/student-management-system) | React |
+| 5 | [Student Access Portal](https://github.com/zeropointcoder/webverse/tree/main/student-access-portal) | React |
+| 6 | [Bookshop](https://github.com/zeropointcoder/webverse/tree/main/bookshop) | React |
+| 4 | [Student Management System](https://github.com/zeropointcoder/webverse/tree/main/student-management-system) | React |
+| 5 | [Student Access Portal](https://github.com/zeropointcoder/webverse/tree/main/student-access-portal) | React |
+| 6 | [Bookshop](https://github.com/zeropointcoder/webverse/tree/main/bookshop) | React |
+| 4 | [Student Management System](https://github.com/zeropointcoder/webverse/tree/main/student-management-system) | React |
+| 5 | [Student Access Portal](https://github.com/zeropointcoder/webverse/tree/main/student-access-portal) | React |
+| 6 | [Bookshop](https://github.com/zeropointcoder/webverse/tree/main/bookshop) | React |
+| 4 | [Student Management System](https://github.com/zeropointcoder/webverse/tree/main/student-management-system) | React |
+| 5 | [Student Access Portal](https://github.com/zeropointcoder/webverse/tree/main/student-access-portal) | React |
+| 6 | [Bookshop](https://github.com/zeropointcoder/webverse/tree/main/bookshop) | React |
+| 4 | [Student Management System](https://github.com/zeropointcoder/webverse/tree/main/student-management-system) | React |
+| 5 | [Student Access Portal](https://github.com/zeropointcoder/webverse/tree/main/student-access-portal) | React |
+| 6 | [Bookshop](https://github.com/zeropointcoder/webverse/tree/main/bookshop) | React |
+| 4 | [Student Management System](https://github.com/zeropointcoder/webverse/tree/main/student-management-system) | React |
+| 5 | [Student Access Portal](https://github.com/zeropointcoder/webverse/tree/main/student-access-portal) | React |
+| 6 | [Bookshop](https://github.com/zeropointcoder/webverse/tree/main/bookshop) | React |
+
+
+| # | Project | Framework |
+|---|--------------|------|
+| 7 | [Eatery Management System](https://github.com/zeropointcoder/webverse/tree/main/eatery-management-system) | Vue 3 |
+| 8 | [Eatery Access Portal](https://github.com/zeropointcoder/webverse/tree/main/eatery-access-portal) | Vue 3 |
+| 9 | [Food Supermarket](https://github.com/zeropointcoder/webverse/tree/main/food-supermarket) | Vue 3 |
+| 7 | [Eatery Management System](https://github.com/zeropointcoder/webverse/tree/main/eatery-management-system) | Vue 3 |
+| 8 | [Eatery Access Portal](https://github.com/zeropointcoder/webverse/tree/main/eatery-access-portal) | Vue 3 |
+| 9 | [Food Supermarket](https://github.com/zeropointcoder/webverse/tree/main/food-supermarket) | Vue 3 |
+| 7 | [Eatery Management System](https://github.com/zeropointcoder/webverse/tree/main/eatery-management-system) | Vue 3 |
+| 8 | [Eatery Access Portal](https://github.com/zeropointcoder/webverse/tree/main/eatery-access-portal) | Vue 3 |
+| 9 | [Food Supermarket](https://github.com/zeropointcoder/webverse/tree/main/food-supermarket) | Vue 3 |
+| 7 | [Eatery Management System](https://github.com/zeropointcoder/webverse/tree/main/eatery-management-system) | Vue 3 |
+| 8 | [Eatery Access Portal](https://github.com/zeropointcoder/webverse/tree/main/eatery-access-portal) | Vue 3 |
+| 9 | [Food Supermarket](https://github.com/zeropointcoder/webverse/tree/main/food-supermarket) | Vue 3 |
+| 7 | [Eatery Management System](https://github.com/zeropointcoder/webverse/tree/main/eatery-management-system) | Vue 3 |
+| 8 | [Eatery Access Portal](https://github.com/zeropointcoder/webverse/tree/main/eatery-access-portal) | Vue 3 |
+| 9 | [Food Supermarket](https://github.com/zeropointcoder/webverse/tree/main/food-supermarket) | Vue 3 |
+| 7 | [Eatery Management System](https://github.com/zeropointcoder/webverse/tree/main/eatery-management-system) | Vue 3 |
+| 8 | [Eatery Access Portal](https://github.com/zeropointcoder/webverse/tree/main/eatery-access-portal) | Vue 3 |
+| 9 | [Food Supermarket](https://github.com/zeropointcoder/webverse/tree/main/food-supermarket) | Vue 3 |
+| 7 | [Eatery Management System](https://github.com/zeropointcoder/webverse/tree/main/eatery-management-system) | Vue 3 |
+| 8 | [Eatery Access Portal](https://github.com/zeropointcoder/webverse/tree/main/eatery-access-portal) | Vue 3 |
+| 9 | [Food Supermarket](https://github.com/zeropointcoder/webverse/tree/main/food-supermarket) | Vue 3 |
+| 7 | [Eatery Management System](https://github.com/zeropointcoder/webverse/tree/main/eatery-management-system) | Vue 3 |
+| 8 | [Eatery Access Portal](https://github.com/zeropointcoder/webverse/tree/main/eatery-access-portal) | Vue 3 |
+| 9 | [Food Supermarket](https://github.com/zeropointcoder/webverse/tree/main/food-supermarket) | Vue 3 |
+| 7 | [Eatery Management System](https://github.com/zeropointcoder/webverse/tree/main/eatery-management-system) | Vue 3 |
+| 8 | [Eatery Access Portal](https://github.com/zeropointcoder/webverse/tree/main/eatery-access-portal) | Vue 3 |
+| 9 | [Food Supermarket](https://github.com/zeropointcoder/webverse/tree/main/food-supermarket) | Vue 3 |
+| 7 | [Eatery Management System](https://github.com/zeropointcoder/webverse/tree/main/eatery-management-system) | Vue 3 |
+| 8 | [Eatery Access Portal](https://github.com/zeropointcoder/webverse/tree/main/eatery-access-portal) | Vue 3 |
+| 9 | [Food Supermarket](https://github.com/zeropointcoder/webverse/tree/main/food-supermarket) | Vue 3 |
 | 7 | [Eatery Management System](https://github.com/zeropointcoder/webverse/tree/main/eatery-management-system) | Vue 3 |
 | 8 | [Eatery Access Portal](https://github.com/zeropointcoder/webverse/tree/main/eatery-access-portal) | Vue 3 |
 | 9 | [Food Supermarket](https://github.com/zeropointcoder/webverse/tree/main/food-supermarket) | Vue 3 |
