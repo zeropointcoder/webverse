@@ -1,40 +1,34 @@
 # Webverse
 
-| # | Angular 21 Project | Framework |
+| # | Angular Project | Framework |
 |---|--------------|------|
-| 1 | [Employee Management System](https://github.com/zeropointcoder/webverse/tree/main/employee-management-system) | Angular 21 |
-| 2 | [Employee Access Portal](https://github.com/zeropointcoder/webverse/tree/main/employee-access-portal) | Angular 21 |
-| 3 | [OfficeMart](https://github.com/zeropointcoder/webverse/tree/main/officemart) | Angular 21 |
-| 4 | [Patient Management System](https://github.com/zeropointcoder/webverse/tree/main/patient-management-system) | Angular 21 |
-| 5 | [Healthcare Access Portal](https://github.com/zeropointcoder/webverse/tree/main/healthcare-access-portal) | Angular 21 |
-| 6 | [MediStore](https://github.com/zeropointcoder/webverse/tree/main/medistore) | Angular 21 |
-| 7 | [Property Management System](https://github.com/zeropointcoder/webverse/tree/main/property-management-system) | Angular 21 |
-| 8 | [Realtor Access Portal](https://github.com/zeropointcoder/webverse/tree/main/realtor-access-portal) | Angular 21 |
-| 9 | [Home Essentials Marketplace](https://github.com/zeropointcoder/webverse/tree/main/home-essentials-marketplace) | Angular 21 |
-| 10 | [Gym Management System](https://github.com/zeropointcoder/webverse/tree/main/gym-management-system) | Angular 21 |
-| 11 | [Trainer Access Portal](https://github.com/zeropointcoder/webverse/tree/main/trainer-access-portal) | Angular 21 |
-| 12 | [Fitgear Store](https://github.com/zeropointcoder/webverse/tree/main/fitgear-store) | Angular 21 |
-| 13 | [Tour Management System](https://github.com/zeropointcoder/webverse/tree/main/tour-management-system) | Angular 21 |
-| 14 | [Travel Access Portal](https://github.com/zeropointcoder/webverse/tree/main/travel-access-portal) | Angular 21 |
-| 15 | [Travel Accessories Shop](https://github.com/zeropointcoder/webverse/tree/main/travel-accessories-shop) | Angular 21 |
-| 16 | [Banking Management System](https://github.com/zeropointcoder/webverse/tree/main/banking-management-system) | Angular 21 |
-| 17 | [SecureBanking Access Portal](https://github.com/zeropointcoder/webverse/tree/main/securebanking-access-portal) | Angular 21 |
-| 18 | [Financial Products Marketplace](https://github.com/zeropointcoder/webverse/tree/main/financial-products-marketplace) | Angular 21 |
-| 19 | [Library Management System](https://github.com/zeropointcoder/webverse/tree/main/library-management-system) | Angular 21 |
-| 20 | [Library Access Portal](https://github.com/zeropointcoder/webverse/tree/main/library-access-portal) | Angular 21 |
-| 21 | [Book Haven Store](https://github.com/zeropointcoder/webverse/tree/main/book-haven-store) | Angular 21 |
-| 22 | [Event Management System](https://github.com/zeropointcoder/webverse/tree/main/event-management-system) | Angular 21 |
-| 23 | [Event Access Portal](https://github.com/zeropointcoder/webverse/tree/main/event-access-portal) | Angular 21 |
-| 24 | [Tickethub Marketplace](https://github.com/zeropointcoder/webverse/tree/main/ticketHub-marketplace) | Angular 21 |
-| 25 | [VehicleService Management System](https://github.com/zeropointcoder/webverse/tree/main/vehicleservice-management-system) | Angular 21 |
-| 26 | [Mechanic Access Portal](https://github.com/zeropointcoder/webverse/tree/main/mechanic-access-portal) | Angular 21 |
-| 27 | [Autoparts Store](https://github.com/zeropointcoder/webverse/tree/main/autoparts-store) | Angular 21 |
-| 28 | [Hotel Management System](https://github.com/zeropointcoder/webverse/tree/main/hotel-management-system) | Angular 21 |
-| 29 | [HotelStaff Access Portal](https://github.com/zeropointcoder/webverse/tree/main/hotelstaff-access-portal) | Angular 21 |
-| 30 | [Hotel Supplies Store](https://github.com/zeropointcoder/webverse/tree/main/hotel-supplies-store) | Angular 21 |
-| 31 | [ProductCatalog Management System](https://github.com/zeropointcoder/webverse/tree/main/productcatalog-management-system) | Angular 21 |
-| 32 | [Seller Access Portal](https://github.com/zeropointcoder/webverse/tree/main/seller-access-portal) | Angular 21 |
-| 33 | [ShopSphere](https://github.com/zeropointcoder/webverse/tree/main/shopsphere) | Angular 21 |
+| 1 | [Employee Management System](https://github.com/zeropointcoder/webverse/tree/main/employee-management-system) | Angular |
+| 2 | [Employee Access Portal](https://github.com/zeropointcoder/webverse/tree/main/employee-access-portal) | Angular |
+| 3 | [OfficeMart](https://github.com/zeropointcoder/webverse/tree/main/officemart) | Angular |
+| 4 | [Patient Management System](https://github.com/zeropointcoder/webverse/tree/main/patient-management-system) | Angular |
+| 5 | [Healthcare Access Portal](https://github.com/zeropointcoder/webverse/tree/main/healthcare-access-portal) | Angular |
+| 6 | [MediStore](https://github.com/zeropointcoder/webverse/tree/main/medistore) | Angular |
+| 7 | [Property Management System](https://github.com/zeropointcoder/webverse/tree/main/property-management-system) | Angular |
+| 8 | [Realtor Access Portal](https://github.com/zeropointcoder/webverse/tree/main/realtor-access-portal) | Angular |
+| 9 | [Home Essentials Marketplace](https://github.com/zeropointcoder/webverse/tree/main/home-essentials-marketplace) | Angular |
+| 10 | [Gym Management System](https://github.com/zeropointcoder/webverse/tree/main/gym-management-system) | Angular |
+| 11 | [Trainer Access Portal](https://github.com/zeropointcoder/webverse/tree/main/trainer-access-portal) | Angular |
+| 12 | [Fitgear Store](https://github.com/zeropointcoder/webverse/tree/main/fitgear-store) | Angular |
+| 13 | [Tour Management System](https://github.com/zeropointcoder/webverse/tree/main/tour-management-system) | Angular |
+| 14 | [Travel Access Portal](https://github.com/zeropointcoder/webverse/tree/main/travel-access-portal) | Angular |
+| 15 | [Travel Accessories Shop](https://github.com/zeropointcoder/webverse/tree/main/travel-accessories-shop) | Angular |
+| 16 | [Banking Management System](https://github.com/zeropointcoder/webverse/tree/main/banking-management-system) | Angular |
+| 17 | [SecureBanking Access Portal](https://github.com/zeropointcoder/webverse/tree/main/securebanking-access-portal) | Angular |
+| 18 | [Financial Products Marketplace](https://github.com/zeropointcoder/webverse/tree/main/financial-products-marketplace) | Angular |
+| 19 | [Library Management System](https://github.com/zeropointcoder/webverse/tree/main/library-management-system) | Angular |
+| 20 | [Library Access Portal](https://github.com/zeropointcoder/webverse/tree/main/library-access-portal) | Angular |
+| 21 | [Book Haven Store](https://github.com/zeropointcoder/webverse/tree/main/book-haven-store) | Angular |
+| 22 | [Event Management System](https://github.com/zeropointcoder/webverse/tree/main/event-management-system) | Angular |
+| 23 | [Event Access Portal](https://github.com/zeropointcoder/webverse/tree/main/event-access-portal) | Angular |
+| 24 | [Tickethub Marketplace](https://github.com/zeropointcoder/webverse/tree/main/ticketHub-marketplace) | Angular |
+| 25 | [VehicleService Management System](https://github.com/zeropointcoder/webverse/tree/main/vehicleservice-management-system) | Angular |
+| 26 | [Mechanic Access Portal](https://github.com/zeropointcoder/webverse/tree/main/mechanic-access-portal) | Angular |
+| 27 | [Autoparts Store](https://github.com/zeropointcoder/webverse/tree/main/autoparts-store) | Angular |
 
 
 | # | React Project | Framework |
@@ -66,12 +60,6 @@
 | 25 | [FarmRecords Management System](https://github.com/zeropointcoder/webverse/tree/main/farmrecords-management-system) | React |
 | 26 | [Farmer Access Portal](https://github.com/zeropointcoder/webverse/tree/main/farmer-access-portal) | React |
 | 27 | [AgriMarket](https://github.com/zeropointcoder/webverse/tree/main/agrimarket) | React |
-| 28 | [BuildingSite Management System](https://github.com/zeropointcoder/webverse/tree/main/buildingsite-management-system) | React |
-| 29 | [Contractor Access Portal](https://github.com/zeropointcoder/webverse/tree/main/contractor-access-portal) | React |
-| 30 | [BuildMart](https://github.com/zeropointcoder/webverse/tree/main/buildmart) | React |
-| 31 | [Shipment Management System](https://github.com/zeropointcoder/webverse/tree/main/shipment-management-system) | React |
-| 32 | [Logistics Access Portal](https://github.com/zeropointcoder/webverse/tree/main/logistics-access-portal) | React |
-| 33 | [SupplyHub](https://github.com/zeropointcoder/webverse/tree/main/supplyhub) | React |
 
 
 | # | Vue 3 Project | Framework |
@@ -103,9 +91,34 @@
 | 25 | [HomeDevice Management System](https://github.com/zeropointcoder/webverse/tree/main/homedevice-management-system) | Vue 3 |
 | 26 | [Homeowner Access Portal](https://github.com/zeropointcoder/webverse/tree/main/homeowner-access-portal) | Vue 3 |
 | 27 | [SmartHome Store](https://github.com/zeropointcoder/webverse/tree/main/smarthome-store) | Vue 3 |
-| 28 | [Salon Management System](https://github.com/zeropointcoder/webverse/tree/main/salon-management-system) | Vue 3 |
-| 29 | [Stylist Access Portal](https://github.com/zeropointcoder/webverse/tree/main/stylist-access-portal) | Vue 3 |
-| 30 | [Beauty Products Store](https://github.com/zeropointcoder/webverse/tree/main/beauty-products-store) | Vue 3 |
-| 31 | [Recycling Management System](https://github.com/zeropointcoder/webverse/tree/main/recycling-management-system) | Vue 3 |
-| 32 | [Environmentalist Access Portal](https://github.com/zeropointcoder/webverse/tree/main/environmentalist-access-portal) | Vue 3 |
-| 33 | [EcoShop](https://github.com/zeropointcoder/webverse/tree/main/ecoshop) | Vue 3 |
+
+
+| # | PYTHON / NODE | Framework |
+|---|--------------|------|
+| 1 | [Hotel Management System](https://github.com/zeropointcoder/webverse/tree/main/hotel-management-system) | API |
+| 2 | [HotelStaff Access Portal](https://github.com/zeropointcoder/webverse/tree/main/hotelstaff-access-portal) | API |
+| 3 | [Hotel Supplies Store](https://github.com/zeropointcoder/webverse/tree/main/hotel-supplies-store) | API |
+| 4 | [ProductCatalog Management System](https://github.com/zeropointcoder/webverse/tree/main/productcatalog-management-system) | API |
+| 5 | [Seller Access Portal](https://github.com/zeropointcoder/webverse/tree/main/seller-access-portal) | API |
+| 6 | [ShopSphere](https://github.com/zeropointcoder/webverse/tree/main/shopsphere) | API |
+| 7 | [BuildingSite Management System](https://github.com/zeropointcoder/webverse/tree/main/buildingsite-management-system) | API |
+| 8 | [Contractor Access Portal](https://github.com/zeropointcoder/webverse/tree/main/contractor-access-portal) | API |
+| 9 | [BuildMart](https://github.com/zeropointcoder/webverse/tree/main/buildmart) | API |
+| 10 | [Shipment Management System](https://github.com/zeropointcoder/webverse/tree/main/shipment-management-system) | API |
+| 11 | [Logistics Access Portal](https://github.com/zeropointcoder/webverse/tree/main/logistics-access-portal) | API |
+| 12 | [SupplyHub](https://github.com/zeropointcoder/webverse/tree/main/supplyhub) | API |
+| 13 | [Salon Management System](https://github.com/zeropointcoder/webverse/tree/main/salon-management-system) | API |
+| 14 | [Stylist Access Portal](https://github.com/zeropointcoder/webverse/tree/main/stylist-access-portal) | API |
+| 15 | [Beauty Products Store](https://github.com/zeropointcoder/webverse/tree/main/beauty-products-store) | API |
+| 16 | [Recycling Management System](https://github.com/zeropointcoder/webverse/tree/main/recycling-management-system) | API |
+| 17 | [Environmentalist Access Portal](https://github.com/zeropointcoder/webverse/tree/main/environmentalist-access-portal) | API |
+| 18 | [EcoShop](https://github.com/zeropointcoder/webverse/tree/main/ecoshop) | API |
+| 19 | [Course Management System](https://github.com/zeropointcoder/webverse/tree/main/course-management-system) | API |
+| 20 | [Instructor Access Portal](https://github.com/zeropointcoder/webverse/tree/main/instructor-access-portal) | API |
+| 21 | [Learning Materials Store](https://github.com/zeropointcoder/webverse/tree/main/learning-materials-store) | API |
+| 22 | [CarRental Management System](https://github.com/zeropointcoder/webverse/tree/main/carrental-management-system) | API |
+| 23 | [RentalAgent Access Portal](https://github.com/zeropointcoder/webverse/tree/main/rentalagent-access-portal) | API |
+| 24 | [Road Trip Store](https://github.com/zeropointcoder/webverse/tree/main/roadtrip-store) | API |
+| 25 | [FoodProduction Management System](https://github.com/zeropointcoder/webverse/tree/main/foodproduction-management-system) | API |
+| 26 | [FoodInspector Access Portal](https://github.com/zeropointcoder/webverse/tree/main/foodinspector-access-portal) | API |
+| 27 | [Kitchen Supply Store](https://github.com/zeropointcoder/webverse/tree/main/kitchen-supply-store) | API |
