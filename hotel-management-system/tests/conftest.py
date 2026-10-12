@@ -1,6 +1,7 @@
 import os
 
-os.environ["DATABASE_URL"] = (
+os.environ.setdefault(
+    "DATABASE_URL",
     "postgresql+psycopg2://leo@localhost/hotel_management_test"
 )
 
