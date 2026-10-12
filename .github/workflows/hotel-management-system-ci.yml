@@ -1,0 +1,59 @@
+name: Hotel Management System CI
+
+on:
+    push:
+        branches:
+            - main
+        paths:
+            - "hotel-management-system/**"
+            - ".github/workflows/hotel-management-system-ci.yml"
+
+    pull_request:
+        branches:
+            - main
+        paths:
+            - "hotel-management-system/**"
+            - ".github/workflows/hotel-management-system-ci.yml"
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+
+        services:
+            postgres:
+                image: postgres:16
+                env:
+                    POSTGRES_DB: hotel_management_test
+                    POSTGRES_USER: hotel_user
+                    POSTGRES_PASSWORD: ci_test_password
+                ports:
+                    - "5432:5432"
+                options: >-
+                    --health-cmd "pg_isready -U hotel_user -d hotel_management_test"
+                    --health-interval 5s
+                    --health-timeout 5s
+                    --health-retries 5
+
+        defaults:
+            run:
+                working-directory: hotel-management-system
+
+        env:
+            DATABASE_URL: postgresql+psycopg2://hotel_user:ci_test_password@localhost:5432/hotel_management_test
+
+        steps:
+            - name: Check out repository
+              uses: actions/checkout@v4
+
+            - name: Set up python
+              uses: actions/setup-python@v5
+              with:
+                python-version: "3.12"
+
+            - name: Install dependencies
+              run: |
+                python -m pip install --upgrade pip
+                pip install -r requirements.txt
+
+            - name: Run tests
+              run: python -m pytest -v
