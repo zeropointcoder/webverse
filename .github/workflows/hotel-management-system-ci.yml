@@ -16,7 +16,7 @@ on:
             - ".github/workflows/hotel-management-system-ci.yml"
 
 jobs:
-    test:
+    test-and-build:
         runs-on: ubuntu-latest
 
         services:
@@ -57,3 +57,13 @@ jobs:
 
             - name: Run tests
               run: python -m pytest -v
+
+            - name: Set up Docker Buildx
+              uses: docker/setup-buildx-action@v3
+
+            - name: Build Docker image
+              uses: docker/build-push-action@v6
+              with:
+                context: ./hotel-management-system
+                push: false
+                tags: hotel-management-system:ci
