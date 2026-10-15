@@ -1,13 +1,9 @@
 from fastapi import FastAPI
 
-from app.database import Base, engine
-from app.models import Staff
 from app.routers import staff
 
 
-Base.metadata.create_all(bind=engine)
-
-app = FastAPI(title="Hotel Mangement System")
+app = FastAPI(title="Hotel Management System")
 
 app.include_router(staff.router)
 

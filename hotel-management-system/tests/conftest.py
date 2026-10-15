@@ -1,9 +1,16 @@
 import os
+from dotenv import load_dotenv
 
-os.environ.setdefault(
-    "DATABASE_URL",
-    "postgresql+psycopg2://leo@localhost/hotel_management_test"
-)
+
+load_dotenv()
+
+test_database_url = os.getenv("TEST_DATABASE_URL")
+
+if not test_database_url:
+    raise RuntimeError("TEST_DATABASE_URL must be configured")
+
+os.environ["DATABASE_URL"] = test_database_url
+
 
 import pytest
 
