@@ -40,6 +40,7 @@ jobs:
 
         env:
             DATABASE_URL: postgresql+psycopg2://hotel_user:ci_test_password@localhost:5432/hotel_management_test
+            TEST_DATABASE_URL: postgresql+psycopg2://hotel_user:ci_test_password@localhost:5432/hotel_management_test
 
         steps:
             - name: Check out repository
