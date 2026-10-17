@@ -290,3 +290,16 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# Terraform local files
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+crash.log
+crash.*.log
+
+# Terraform variable files may contain secrets
+*.tfvars
+*.tfvars.json
