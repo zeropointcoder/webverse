@@ -53,6 +53,25 @@ resource "aws_route_table_association" "app_public" {
   route_table_id = aws_route_table.public.id
 }
 
+# Second public subnet for the Application Load Balancer
+resource "aws_subnet" "app_public_b" {
+  vpc_id                  = aws_vpc.hotel.id
+  cidr_block              = "10.0.2.0/24"
+  availability_zone       = "eu-west-2b"
+  map_public_ip_on_launch = true
+
+  tags = {
+    Name    = "hotel-management-public-subnet-b"
+    Project = "hotel-management-system"
+  }
+}
+
+# Associate the second public subnet with the public route table
+resource "aws_route_table_association" "app_public_b" {
+  subnet_id      = aws_subnet.app_public_b.id
+  route_table_id = aws_route_table.public.id
+}
+
 # Private subnets for the RDS database subnet group
 # RDS will use these in two different Availability Zones
 resource "aws_subnet" "db_private_a" {
