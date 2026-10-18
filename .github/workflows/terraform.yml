@@ -1,0 +1,52 @@
+name: Terraform Checks
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "hotel-management-system/terraform/**"
+      - ".github/workflows/terraform.yml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "hotel-management-system/terraform/**"
+      - ".github/workflows/terraform.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  terraform-checks:
+    name: Format and Validate Terraform
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: hotel-management-system/terraform
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Check Terraform formatting
+        run: terraform fmt -check -recursive
+
+      - name: Initialize Terraform without a backend
+        run: terraform init -backend=false -input=false
+
+      - name: Validate Terraform configuration
+        run: terraform validate
+
+      # Intentionally disabled: planning can make read-only AWS API calls.
+      # - name: Terraform plan
+      #   run: terraform plan -input=false -lock=false
+
+      # Intentionally disabled: applying can create, change, or destroy resources.
+      # - name: Terraform apply
+      #   run: terraform apply -input=false -auto-approve
