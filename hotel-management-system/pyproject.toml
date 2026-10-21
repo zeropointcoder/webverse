@@ -1,0 +1,16 @@
+[project]
+name = "hotel-management-system"
+version = "1.0.1"
+description = "A FastAPI-based hotel management system"
+requires-python = ">=3.12"
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]

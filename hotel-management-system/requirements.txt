@@ -7,3 +7,4 @@ pytest
 email-validator
 alembic
 python-dotenv
+prometheus-fastapi-instrumentator
