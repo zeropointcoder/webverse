@@ -1,6 +1,6 @@
 import os
-from dotenv import load_dotenv
 
+from dotenv import load_dotenv
 
 load_dotenv()
 
@@ -13,10 +13,9 @@ os.environ["DATABASE_URL"] = test_database_url
 
 
 import pytest
-
-from app.database import SessionLocal
 from fastapi.testclient import TestClient
-from app.database import get_db
+
+from app.database import SessionLocal, get_db
 from app.main import app
 from app.models import Staff
 

@@ -1,7 +1,8 @@
-from app.models import Staff
-
 from unittest.mock import patch
+
 from sqlalchemy.exc import SQLAlchemyError
+
+from app.models import Staff
 
 
 def test_health_check(client):

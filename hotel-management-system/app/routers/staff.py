@@ -1,13 +1,11 @@
 from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session
 
 from app.database import get_db
 from app.models import Staff
 from app.schemas import StaffCreate, StaffUpdate
-
-from sqlalchemy.exc import SQLAlchemyError
 from app.services.staff_service import commit_changes
-
 
 router = APIRouter(
     prefix="/staff",

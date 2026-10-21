@@ -3,7 +3,6 @@ from prometheus_fastapi_instrumentator import Instrumentator
 
 from app.routers import staff
 
-
 app = FastAPI(title="Hotel Management System")
 
 app.include_router(staff.router)
