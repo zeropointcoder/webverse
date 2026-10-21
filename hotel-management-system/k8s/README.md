@@ -5,6 +5,7 @@ This guide covers local Kubernetes deployment and validation of the EKS configur
 Run all commands from the repository root: `hotel-management-system/`.
 
 ## Local Kubernetes
+Deploy the resources in the order below. Do not apply the entire local overlay at once, because Kubernetes does not guarantee migration ordering.
 
 ### 1. Create the local Secret
 

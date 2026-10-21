@@ -1,40 +1,39 @@
 # Hotel Management System
 
-A staff management REST API built with Python, FastAPI, PostgreSQL, SQLAlchemy, and Pydantic.
+Staff management REST API built with FastAPI, PostgreSQL, and SQLAlchemy.
 
-## Features
+**Stack:** Python · FastAPI · PostgreSQL · Docker · Kubernetes · Terraform · Prometheus · Grafana
 
-- Create, list, retrieve, update, and delete staff members
-- Request validation and error handling
-- Automated tests with pytest
-- Dockerised API and PostgreSQL database using Docker Compose
-
-## Run with Docker Compose
-
-From this directory:
+## Run Locally
 
 ```bash
 docker compose up -d --build
 ```
 
-API documentation: http://localhost:8000/docs
+- API documentation: http://localhost:8000/docs
+- Health check: http://localhost:8000/health
 
-Health check: http://localhost:8000/health
+## Staff API
 
-Stop the services:
+| Method | Endpoint | Action |
+|---|---|---|
+| `POST` | `/staff/` | Create staff member |
+| `GET` | `/staff/` | List staff members |
+| `GET` | `/staff/{staff_id}` | Retrieve staff member |
+| `PUT` | `/staff/{staff_id}` | Update staff member |
+| `DELETE` | `/staff/{staff_id}` | Delete staff member |
+
+Use `/docs` to view request schemas and try the endpoints.
+
+## Tests
 
 ```bash
-docker compose down
+python -m pytest -v
 ```
 
-The PostgreSQL data is stored in a Docker named volume and persists when the services are stopped and restarted. Use `docker compose down -v` only when you intentionally want to remove that volume and its data.
+## Deployment & Monitoring
 
-## Run tests locally
+- [Kubernetes](k8s/README.md) — local deployment and EKS configuration.
+- [Monitoring](monitoring/README.md) — Prometheus metrics and Grafana dashboard.
 
-Activate the project's Python environment, then run:
-
-```bash
-python3 -m pytest -v
-```
-
-The tests use the configured test database. Configure `DATABASE_URL` appropriately before running them.
+**Status:** Local Docker and Kubernetes setups tested. Terraform configured; AWS deployment not performed.
