@@ -6,13 +6,13 @@ on:
       - main
     paths:
       - "hotel-management-system/terraform/**"
-      - ".github/workflows/terraform.yml"
+      - ".github/workflows/hotel-management-system-terraform.yml"
   pull_request:
     branches:
       - main
     paths:
       - "hotel-management-system/terraform/**"
-      - ".github/workflows/terraform.yml"
+      - ".github/workflows/hotel-management-system-terraform.yml"
   workflow_dispatch:
 
 permissions:

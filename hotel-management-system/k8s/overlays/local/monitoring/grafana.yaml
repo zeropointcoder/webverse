@@ -1,0 +1,82 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hotel-grafana
+  labels:
+    app: hotel-grafana
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hotel-grafana
+  template:
+    metadata:
+      labels:
+        app: hotel-grafana
+    spec:
+      containers:
+        - name: grafana
+          image: grafana/grafana:12.0.2
+          ports:
+            - name: http
+              containerPort: 3000
+          env:
+            - name: GF_SECURITY_ADMIN_USER
+              value: admin
+            - name: GF_SECURITY_ADMIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: hotel-monitoring-secrets
+                  key: GRAFANA_ADMIN_PASSWORD
+          readinessProbe:
+            httpGet:
+              path: /api/health
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /api/health
+              port: http
+            initialDelaySeconds: 20
+            periodSeconds: 15
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+          volumeMounts:
+            - name: datasource-provisioning
+              mountPath: /etc/grafana/provisioning/datasources
+              readOnly: true
+            - name: dashboard-provider
+              mountPath: /etc/grafana/provisioning/dashboards
+              readOnly: true
+            - name: dashboard-files
+              mountPath: /var/lib/grafana/dashboards/hotel-api
+              readOnly: true
+      volumes:
+        - name: datasource-provisioning
+          configMap:
+            name: hotel-grafana-datasource
+        - name: dashboard-provider
+          configMap:
+            name: hotel-grafana-dashboard-provider
+        - name: dashboard-files
+          configMap:
+            name: hotel-grafana-dashboard
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hotel-grafana
+spec:
+  type: ClusterIP
+  selector:
+    app: hotel-grafana
+  ports:
+    - name: http
+      port: 3000
+      targetPort: http

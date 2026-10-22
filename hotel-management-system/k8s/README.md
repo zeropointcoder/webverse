@@ -76,3 +76,37 @@ kubectl apply --dry-run=client -k k8s/overlays/eks
 - Local credentials are for development only. Never commit real secrets to Git.
 - The local setup assumes the Secret and migration Job do not already exist.
 - Production deployment requires environment-specific configuration and validation.
+
+## Local Monitoring
+
+Create the Grafana password Secret (enter your password when prompted):
+
+```bash
+read -s "GRAFANA_ADMIN_PASSWORD?Grafana password: "
+echo
+kubectl create secret generic hotel-monitoring-secrets \
+  --from-literal=GRAFANA_ADMIN_PASSWORD="$GRAFANA_ADMIN_PASSWORD"
+unset GRAFANA_ADMIN_PASSWORD
+```
+
+Apply monitoring after completing steps 1–4 above:
+
+```bash
+kubectl apply -k k8s/overlays/local/monitoring
+```
+
+Access Grafana:
+
+```bash
+kubectl port-forward service/hotel-grafana 3000:3000
+```
+
+Open `http://localhost:3000` and sign in as `admin` using your chosen password.
+
+Access Prometheus in another terminal:
+
+```bash
+kubectl port-forward service/hotel-prometheus 9090:9090
+```
+
+Open `http://localhost:9090/targets` to check API scraping.
